@@ -11,9 +11,9 @@ const Sheet = ({ questions, answers, handlers }) => {
     onAnswer(i, answer)
     setActiveIndex(i+1) 
   }
-  const isAnswerCorrect = i => {
+  const isQuestionCorrect = i => {
     if (answers[i] === null) return true
-    return answers[i] === questions[i].answer
+    return answers[i] === `${questions[i].answer}`
   }
 
   return (
@@ -29,7 +29,7 @@ const Sheet = ({ questions, answers, handlers }) => {
             second={q.second}
             answer={q.answer}
             onAnswer={onQuestionAnswer(i)}
-            error={!isAnswerCorrect(i)}
+            error={!isQuestionCorrect(i)}
           />
         </div>
       ))}

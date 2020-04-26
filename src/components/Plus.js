@@ -36,7 +36,6 @@ const Plus = ({
       <div>
         <input
           ref={inputRef}
-          placeholder={answer}
           onKeyDown={onKeyDown}
         />
       </div>
