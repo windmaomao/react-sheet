@@ -16,13 +16,25 @@ const sheetCreator = () => {
           answers[i] = value
         },
       }
-      const utils = {
-        touched: i => answers[i] !== null,
-        checked: i => {
-          const correct = questions[i].answer
-          return `${correct}` === answers[i]
-        },
+
+      const touched = i => answers[i] !== null
+      const checked = i => {
+        const correct = questions[i].answer
+        return `${correct}` === answers[i]
       }
+      const stats = () => {
+        return questions.reduce((acc, _, i) => {
+          if (touched(i)) {
+            acc.answered++
+            if (checked(i)) {
+              acc.correct++
+            }
+          }
+          return acc
+        }, { correct: 0, answered: 0, total: n })
+      }
+
+      const utils = { touched, checked, stats }
 
       return { questions, answers, handlers, utils }
     }

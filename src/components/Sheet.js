@@ -2,8 +2,11 @@ import React, { useState } from 'react'
 import Plus from './Plus'
 import SheetStyle from './SheetStyle'
 
-const Sheet = ({ questions, answers, handlers, utils }) => {
-  console.info('Answer', answers)
+const Sheet = ({ 
+  questions, answers, handlers, utils,
+  onStats,
+}) => {
+  // console.info('Answer', answers, utils.stats())
   const [activeIndex, setActiveIndex] = useState(0)
   const { onAnswer } = handlers
   const { touched, checked } = utils
@@ -11,7 +14,8 @@ const Sheet = ({ questions, answers, handlers, utils }) => {
   const onSelect = i => () => { setActiveIndex(i) } 
   const onQuestionAnswer = i => answer => { 
     onAnswer(i, answer)
-    setActiveIndex(i+1) 
+    onStats(utils.stats())
+    setActiveIndex(i+1)
   }
   const isQuestionError = i => {
     if (touched(i)) {

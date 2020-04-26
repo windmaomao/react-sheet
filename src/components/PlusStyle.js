@@ -21,7 +21,7 @@ const PlusStyle = styled.div`
   flex-direction: column;
   align-items: end;
   width: ${width};
-  margin: 2rem 1rem;
+  margin: 1rem 1rem;
   padding: 1rem;
 
   input {
