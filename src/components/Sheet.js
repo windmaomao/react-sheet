@@ -2,10 +2,19 @@ import React, { useState } from 'react'
 import Plus from './Plus'
 import SheetStyle from './SheetStyle'
 
-const Sheet = ({ questions }) => {
+const Sheet = ({ questions, answers, handlers }) => {
   const [activeIndex, setActiveIndex] = useState(0)
+  const { onAnswer } = handlers
+
   const onSelect = i => () => { setActiveIndex(i) } 
-  const onAnswer = i => () => { setActiveIndex(i+1) }
+  const onQuestionAnswer = i => answer => { 
+    onAnswer(i, answer)
+    setActiveIndex(i+1) 
+  }
+  const isAnswerCorrect = i => {
+    if (answers[i] === null) return true
+    return answers[i] === questions[i].answer
+  }
 
   return (
     <SheetStyle>
@@ -19,7 +28,8 @@ const Sheet = ({ questions }) => {
             first={q.first}
             second={q.second}
             answer={q.answer}
-            onAnswer={onAnswer(i)}
+            onAnswer={onQuestionAnswer(i)}
+            error={!isAnswerCorrect(i)}
           />
         </div>
       ))}
