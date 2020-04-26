@@ -1,7 +1,9 @@
 import styled from 'styled-components'
+import variables from '../variables'
 
 const fontSize = '40px'
 const width = '120px'
+const fontFamily = variables.fontFamily
 
 const color = props => {
   if (props.error) return 'red'
@@ -15,7 +17,7 @@ const backgroundColor = props => {
 
 const PlusStyle = styled.div`
   background-color: ${backgroundColor};
-  font-family: Times New Rome;
+  font-family: ${fontFamily};
   font-size: ${fontSize};
   display: flex;
   flex-direction: column;
@@ -26,7 +28,7 @@ const PlusStyle = styled.div`
 
   input {
     background-color: ${backgroundColor};
-    font-family: Times New Rome;
+    font-family: ${fontFamily};
     font-size: ${fontSize};
     border-left: none;
     border-right: none;

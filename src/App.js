@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Sheet, Score } from './components'
 import { sheetCreator, arithmeticGen } from './utils'
+import AppStyle from './AppStyle'
 
 const gen = arithmeticGen({ max: 10, operator: '+' }).gen
 const {
@@ -11,7 +12,7 @@ const App = () => {
   const [stats, setStats] = useState(utils.stats())
   const { total, correct, answered } = stats
   return (
-    <div className="App">
+    <AppStyle>
       <h1>&nbsp;</h1>
       <Score
         total={total}
@@ -25,7 +26,7 @@ const App = () => {
         utils={utils}
         onStats={setStats}
       /> 
-    </div>
+    </AppStyle>
   )
 }
 
