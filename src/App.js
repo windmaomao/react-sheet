@@ -5,7 +5,11 @@ const App = () => {
   return (
     <div className="App">
       Hello Sheet
-      <Plus />
+      <Plus 
+        first="2"
+        second="32"
+        value=""
+      />
     </div>
   )
 }
