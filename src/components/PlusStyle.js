@@ -5,16 +5,24 @@ const color = props => {
   return 'black'
 }
 
+const backgroundColor = props => {
+  if (props.active) return '#fafafa'
+  return 'white'
+}
+
 const PlusStyle = styled.div`
+  background-color: ${backgroundColor};
   font-family: Times New Rome;
   font-size: 35px;
   display: flex;
   flex-direction: column;
   align-items: end;
-  width: 120px;
+  width: 90px;
   margin: 2rem 1rem;
+  padding: 1rem;
 
   input {
+    background-color: ${backgroundColor};
     font-family: Times New Rome;
     font-size: 35px;
     border-left: none;
@@ -25,11 +33,6 @@ const PlusStyle = styled.div`
     text-align: right;
     width: 80px;
     height: 60px;
-  }
-
-  .__last {
-    display: flex;
-    flex-direction: row;
   }
 `
 

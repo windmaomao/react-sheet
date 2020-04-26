@@ -1,55 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Plus from './Plus'
 import SheetStyle from './SheetStyle'
 
-const Sheet = () => {
+const Sheet = ({ questions }) => {
+  const [activeIndex, setActiveIndex] = useState(0)
+  const onSelect = i => () => { setActiveIndex(i) } 
+
   return (
     <SheetStyle>
-      <Plus
-        first={2}
-        second={3}
-        value=""
-      />
-      <Plus
-        first="1"
-        second="1"
-        value=""
-      />
-      <Plus
-        first="8"
-        second="8"
-        value=""
-      />
-      <Plus
-        first="3"
-        second="5"
-        value=""
-      />
-      <Plus
-        first="8"
-        second="3"
-        value=""
-      />
-      <Plus
-        first="5"
-        second="2"
-        value=""
-      />
-      <Plus
-        first="33"
-        second="12"
-        value=""
-      />
-      <Plus
-        first="4"
-        second="3"
-        value=""
-      />
-      <Plus
-        first="5"
-        second="9"
-        value=""
-      />
+      {questions.map((q, i) => (
+        <div
+          key={i}
+          onClick={onSelect(i)}
+        >
+          <Plus
+            active={i === activeIndex}
+            first={q.first}
+            second={q.second}
+            answer={q.answer}
+          />
+        </div>
+      ))}
     </SheetStyle>
   )
 }

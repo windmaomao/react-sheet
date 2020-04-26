@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import PlusStyle from './PlusStyle'
 
 /**
@@ -7,21 +7,33 @@ import PlusStyle from './PlusStyle'
  * @param {func} onChange event upon value changed
  * @param {string} first fist value
  * @param {string} second second value
- * @param {string} error error
+ * @param {bool} active active
+ * @param {bool} error error
  */
 const Plus = ({ 
   value, onChange,
-  first, second, 
-  error
+  first, second, answer,
+  active, error
 }) => {
+  const inputRef = useRef(null)
+  useEffect(() => { 
+    if (active) {
+      inputRef.current.focus()
+    }
+  }, [active])
+
   return (
-    <PlusStyle error={error}>
+    <PlusStyle
+      active={active}
+      error={error}
+    >
       <div>{first}</div>
       <div>+ &nbsp;&nbsp;{second}</div>
       <div>
         <input
-          autoFocus
+          ref={inputRef}
           onChange={onChange}
+          placeholder={answer}
         />
       </div>
     </PlusStyle>
