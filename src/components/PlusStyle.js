@@ -30,7 +30,7 @@ const PlusStyle = styled.div`
     font-size: ${fontSize};
     border-left: none;
     border-right: none;
-    border-bottom: 1px dashed #aaa;
+    border-bottom: none;
     border-top: 2px solid black;
     box-sizing: border-box;
     text-align: right;

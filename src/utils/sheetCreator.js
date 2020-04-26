@@ -1,5 +1,4 @@
 const n = 20
-
 const randomInt = x => Math.floor(Math.random() * x)
 
 const sheetCreator = () => {
@@ -15,10 +14,17 @@ const sheetCreator = () => {
       const handlers = {
         onAnswer: (i, value) => {
           answers[i] = value
-        }
+        },
+      }
+      const utils = {
+        touched: i => answers[i] !== null,
+        checked: i => {
+          const correct = questions[i].answer
+          return `${correct}` === answers[i]
+        },
       }
 
-      return { questions, answers, handlers }
+      return { questions, answers, handlers, utils }
     }
   }
 }

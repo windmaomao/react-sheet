@@ -2,7 +2,9 @@ import React from 'react'
 import { Sheet } from './components'
 import { sheetCreator } from './utils'
 
-const { questions, answers, handlers } = sheetCreator().createSheet()
+const {
+  questions, answers, handlers, utils 
+} = sheetCreator().createSheet()
 const App = () => {
   return (
     <div className="App">
@@ -11,6 +13,7 @@ const App = () => {
         questions={questions}
         answers={answers}
         handlers={handlers}
+        utils={utils}
       /> 
     </div>
   )
