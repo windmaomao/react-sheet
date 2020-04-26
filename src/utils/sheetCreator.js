@@ -1,21 +1,12 @@
-const n = 20
-const randomInt = x => Math.floor(Math.random() * x)
-
-const sheetCreator = () => {
+const sheetCreator = (gen) => {
   return {
-    createSheet: () => {
-      const questions = new Array(n).fill(0).map(i => {
-        const first = randomInt(10)
-        const second = randomInt(10)
-        const answer = first + second
-        return { first, second, answer }
-      })
+    createSheet: n => {
       const answers = new Array(n).fill(null)
-      const handlers = {
-        onAnswer: (i, value) => {
-          answers[i] = value
-        },
+      const questions = answers.map(i => gen())
+      const onAnswer = (i, value) => {
+        answers[i] = value
       }
+      const handlers = { onAnswer }
 
       const touched = i => answers[i] !== null
       const checked = i => {

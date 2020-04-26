@@ -6,11 +6,12 @@ import PlusStyle from './PlusStyle'
  * @param {func} onAnswer event upon value submit
  * @param {string} first fist value
  * @param {string} second second value
+ * @param {string} operator operator
  * @param {bool} active active
  * @param {bool} error error
  */
 const Plus = ({ 
-  onAnswer, first, second, answer,
+  onAnswer, first, second, operator,
   active, error
 }) => {
   const inputRef = useRef(null)
@@ -32,7 +33,7 @@ const Plus = ({
       error={error}
     >
       <div>{first}</div>
-      <div>+ &nbsp;&nbsp;{second}</div>
+      <div>{operator} &nbsp;&nbsp;{second}</div>
       <div>
         <input
           ref={inputRef}

@@ -3,10 +3,9 @@ import Plus from './Plus'
 import SheetStyle from './SheetStyle'
 
 const Sheet = ({ 
-  questions, answers, handlers, utils,
+  questions, handlers, utils,
   onStats,
 }) => {
-  // console.info('Answer', answers, utils.stats())
   const [activeIndex, setActiveIndex] = useState(0)
   const { onAnswer } = handlers
   const { touched, checked } = utils
@@ -35,6 +34,7 @@ const Sheet = ({
             active={i === activeIndex}
             first={q.first}
             second={q.second}
+            operator={q.operator}
             answer={q.answer}
             onAnswer={onQuestionAnswer(i)}
             error={isQuestionError(i)}
