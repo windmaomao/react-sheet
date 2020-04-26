@@ -4,14 +4,15 @@ import PlusStyle from './PlusStyle'
 /**
  * Plus Component
  * @param {string} value value answer
- * @param {func} onChange event upon value changed
+ * @param {func} onChange event upon value change
+ * @param {func} onAnswer event upon value submit
  * @param {string} first fist value
  * @param {string} second second value
  * @param {bool} active active
  * @param {bool} error error
  */
 const Plus = ({ 
-  value, onChange,
+  value, onChange, onAnswer,
   first, second, answer,
   active, error
 }) => {
@@ -21,6 +22,13 @@ const Plus = ({
       inputRef.current.focus()
     }
   }, [active])
+
+  const onKeyDown = e => {
+    if (e.keyCode === 13) {
+      console.log('ddd')
+      onAnswer(e.target.value)
+    }
+  }
 
   return (
     <PlusStyle
@@ -34,6 +42,7 @@ const Plus = ({
           ref={inputRef}
           onChange={onChange}
           placeholder={answer}
+          onKeyDown={onKeyDown}
         />
       </div>
     </PlusStyle>

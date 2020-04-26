@@ -5,6 +5,7 @@ import SheetStyle from './SheetStyle'
 const Sheet = ({ questions }) => {
   const [activeIndex, setActiveIndex] = useState(0)
   const onSelect = i => () => { setActiveIndex(i) } 
+  const onAnswer = i => () => { setActiveIndex(i+1) }
 
   return (
     <SheetStyle>
@@ -18,6 +19,7 @@ const Sheet = ({ questions }) => {
             first={q.first}
             second={q.second}
             answer={q.answer}
+            onAnswer={onAnswer(i)}
           />
         </div>
       ))}
