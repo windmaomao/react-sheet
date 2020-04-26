@@ -1,15 +1,11 @@
 import React from 'react'
-import { Plus } from './components'
+import { Sheet } from './components'
 
 const App = () => {
   return (
     <div className="App">
-      Hello Sheet
-      <Plus 
-        first="2"
-        second="32"
-        value=""
-      />
+      <h1>Plus Sheet</h1>
+      <Sheet /> 
     </div>
   )
 }

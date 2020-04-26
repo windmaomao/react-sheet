@@ -7,18 +7,19 @@ import PlusStyle from './PlusStyle'
  * @param {func} onChange event upon value changed
  * @param {string} first fist value
  * @param {string} second second value
+ * @param {string} error error
  */
 const Plus = ({ 
   value, onChange,
   first, second, 
+  error
 }) => {
   return (
-    <PlusStyle>
+    <PlusStyle error={error}>
       <div>{first}</div>
-      <div>{second}</div>
+      <div>+ &nbsp;&nbsp;{second}</div>
       <div>
         <input
-          tab="1"
           autoFocus
           onChange={onChange}
         />
