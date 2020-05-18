@@ -3,10 +3,10 @@ import { Sheet, Score } from './components'
 import { sheetCreator, arithmeticGen } from './utils'
 import AppStyle from './AppStyle'
 
-const gen = arithmeticGen({ max: 10, operator: '+' }).gen
+const gen = arithmeticGen({ max: 12, operator: '+' }).gen
 const {
   questions, answers, handlers, utils 
-} = sheetCreator(gen).createSheet(20)
+} = sheetCreator(gen).createSheet(100)
 
 const App = () => {
   const [stats, setStats] = useState(utils.stats())

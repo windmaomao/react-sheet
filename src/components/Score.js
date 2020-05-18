@@ -6,8 +6,8 @@ const Score = ({ total, correct, answered }) => {
     <ScoreStyle>
       <div>
         <div>Total: {total}</div>
-        <div>Answered: {answered}</div>
         <div>Correct: {correct}</div>
+        <div>Answered: {answered}</div>
       </div>
     </ScoreStyle>
   )

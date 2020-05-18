@@ -33,7 +33,7 @@ const PlusStyle = styled.div`
     border-left: none;
     border-right: none;
     border-bottom: none;
-    border-top: 2px solid black;
+    border-top: 2px solid ${color};
     box-sizing: border-box;
     text-align: right;
     width: 100%;
