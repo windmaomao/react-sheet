@@ -22,10 +22,11 @@ const Plus = ({
   }, [active])
 
   const onKeyDown = e => {
-    if (e.keyCode === 13) {
+    console.log(e.keyCode)
+    if (e.keyCode === 13 || e.keyCode === 32) {
       onAnswer(e.target.value)
     }
-    if (e.keyCode > 57) {
+    if (e.keyCode === 32 || e.keyCode > 57) {
       e.preventDefault()
     }
   }
