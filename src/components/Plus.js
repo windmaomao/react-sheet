@@ -22,7 +22,6 @@ const Plus = ({
   }, [active])
 
   const onKeyDown = e => {
-    console.log(e.keyCode)
     if (e.keyCode === 13) {
       onAnswer(e.target.value)
     }

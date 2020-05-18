@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import variables from '../variables'
 
-const fontSize = '40px'
-const width = '120px'
+const fontSize = '2.5rem'
+const width = '7.5rem'
 const fontFamily = variables.fontFamily
 
 const color = props => {

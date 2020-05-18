@@ -8,6 +8,7 @@ const ScoreStyle = styled.div`
   background-color: black;
   color: white;
   padding: 1rem;
+  font-size: 1.25rem;
   & > div {
     display: flex;
     flex-direction: row;

@@ -5,9 +5,9 @@ const Score = ({ total, correct, answered }) => {
   return (
     <ScoreStyle>
       <div>
-        <div>Total: {total}</div>
-        <div>Correct: {correct}</div>
-        <div>Answered: {answered}</div>
+        <div>Total: &nbsp; {total}</div>
+        <div>Correct: &nbsp; {correct}</div>
+        <div>Answered: &nbsp; {answered}</div>
       </div>
     </ScoreStyle>
   )
