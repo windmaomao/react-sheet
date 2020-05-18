@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Sheet, Score } from './components'
+import { Sheet, Score, Time } from './components'
 import { sheetCreator, arithmeticGen } from './utils'
 import AppStyle from './AppStyle'
 
@@ -26,6 +26,7 @@ const App = () => {
         utils={utils}
         onStats={setStats}
       /> 
+      <Time />
     </AppStyle>
   )
 }
