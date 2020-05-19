@@ -26,7 +26,7 @@ const Plus = ({
     if (e.keyCode === 13 || e.keyCode === 32) {
       onAnswer(e.target.value)
     }
-    if (e.keyCode === 32 || e.keyCode > 57) {
+    if (e.keyCode <= 32 || e.keyCode > 57) {
       e.preventDefault()
     }
   }
