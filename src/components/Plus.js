@@ -17,7 +17,11 @@ const Plus = ({
   const inputRef = useRef(null)
   useEffect(() => { 
     if (active) {
-      inputRef.current.focus()
+      const current = inputRef.current
+      if (current) {
+        current.focus()
+        current.scrollIntoView({ block: "center" })
+      }
     }
   }, [active])
 
