@@ -21,7 +21,7 @@ const PlusStyle = styled.div`
   font-size: ${fontSize};
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: flex-end;
   width: ${width};
   margin: 1rem 1rem;
   padding: 1rem;
