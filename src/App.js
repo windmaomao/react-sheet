@@ -13,7 +13,9 @@ const App = () => {
   const { total, correct, answered } = stats
 
   const onGen = () => {
-    setSheet(sheetCreator(gen).createSheet(100))
+    const s = sheetCreator(gen).createSheet(100)
+    setSheet(s)
+    setStats(s.utils.stats())
   }
 
   return (
