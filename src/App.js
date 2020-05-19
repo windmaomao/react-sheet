@@ -4,16 +4,24 @@ import { sheetCreator, arithmeticGen } from './utils'
 import AppStyle from './AppStyle'
 
 const gen = arithmeticGen({ max: 12, operator: '+' }).gen
-const {
-  questions, answers, handlers, utils 
-} = sheetCreator(gen).createSheet(100)
 
 const App = () => {
+  const [sheet, setSheet] = useState(sheetCreator(gen).createSheet(100))
+  const { questions, answers, handlers, utils } = sheet
+  
   const [stats, setStats] = useState(utils.stats())
   const { total, correct, answered } = stats
+
+  const onGen = () => {
+    setSheet(sheetCreator(gen).createSheet(100))
+  }
+
   return (
     <AppStyle>
       <h1>&nbsp;</h1>
+      <button
+        onClick={onGen}
+      >+</button>
       <Score
         total={total}
         correct={correct}
