@@ -26,20 +26,17 @@ const Sheet = ({
   return (
     <SheetStyle>
       {questions.map((q, i) => (
-        <div
+        <Plus
           key={i}
           onClick={onSelect(i)}
-        >
-          <Plus
-            active={i === activeIndex}
-            first={q.first}
-            second={q.second}
-            operator={q.operator}
-            answer={q.answer}
-            onAnswer={onQuestionAnswer(i)}
-            error={isQuestionError(i)}
-          />
-        </div>
+          active={i === activeIndex}
+          first={q.first}
+          second={q.second}
+          operator={q.operator}
+          answer={q.answer}
+          onAnswer={onQuestionAnswer(i)}
+          error={isQuestionError(i)}
+        />
       ))}
     </SheetStyle>
   )

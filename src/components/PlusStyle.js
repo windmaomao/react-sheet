@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import variables from '../variables'
 
 const fontSize = '2.5rem'
-const width = '7.5rem'
+const width = '9.5rem'
 const fontFamily = variables.fontFamily
 
 const color = props => {
@@ -38,7 +38,8 @@ const PlusStyle = styled.div`
     text-align: right;
     width: 100%;
     line-height: 1.8;
-    color: ${color}
+    color: ${color};
+    outline: 0;
   }
 `
 
