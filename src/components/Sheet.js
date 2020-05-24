@@ -28,7 +28,7 @@ const Sheet = ({
       {questions.map((q, i) => (
         <Plus
           key={i}
-          onClick={onSelect(i)}
+          onFocus={onSelect(i)}
           active={i === activeIndex}
           first={q.first}
           second={q.second}

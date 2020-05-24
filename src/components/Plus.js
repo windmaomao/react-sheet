@@ -1,7 +1,12 @@
 import React, { useRef, useEffect } from 'react'
 import PlusStyle from './PlusStyle'
 
-const keysOnly = [8]
+const keysOnly = [
+  8,  // backspace
+  9,  // tab
+  37, // left arrow
+  39, // right arrow
+]
 
 /**
  * Plus Component
@@ -14,7 +19,7 @@ const keysOnly = [8]
  */
 const Plus = ({ 
   onAnswer, first, second, operator,
-  active, error
+  active, error, onFocus
 }) => {
   const inputRef = useRef(null)
   useEffect(() => { 
@@ -49,6 +54,7 @@ const Plus = ({
         <input
           ref={inputRef}
           onKeyDown={onKeyDown}
+          onFocus={onFocus}
         />
       </div>
     </PlusStyle>
