@@ -21,9 +21,9 @@ const App = () => {
   return (
     <AppStyle>
       <h1>&nbsp;</h1>
-      <button
+      {/* <button
         onClick={onGen}
-      >+</button>
+      >+</button> */}
       <Score
         total={total}
         correct={correct}

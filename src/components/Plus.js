@@ -1,6 +1,8 @@
 import React, { useRef, useEffect } from 'react'
 import PlusStyle from './PlusStyle'
 
+const keysOnly = [8]
+
 /**
  * Plus Component
  * @param {func} onAnswer event upon value submit
@@ -30,7 +32,8 @@ const Plus = ({
     if (e.keyCode === 13 || e.keyCode === 32) {
       onAnswer(e.target.value)
     }
-    if (e.keyCode <= 32 || e.keyCode > 57) {
+    if (e.keyCode >= 48 && e.keyCode <= 57) return
+    if (keysOnly.indexOf(e.keyCode) < 0) {
       e.preventDefault()
     }
   }
