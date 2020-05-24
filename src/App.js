@@ -3,27 +3,28 @@ import { Sheet, Score, Time } from './components'
 import { sheetCreator, arithmeticGen } from './utils'
 import AppStyle from './AppStyle'
 
-const gen = arithmeticGen({ max: 12, operator: '+' }).gen
+const gen1 = arithmeticGen({ max: 12, operator: '+' }).gen
+const genPlus12 = arithmeticGen({ max: 12, operator: '+' }).gen
+const genMinus8 = arithmeticGen({ max: 8, operator: '-' }).gen
 
 const App = () => {
-  const [sheet, setSheet] = useState(sheetCreator(gen).createSheet(100))
-  const { sheetId, questions, answers, handlers, utils } = sheet
+  const [sheet, setSheet] = useState(sheetCreator(gen1).createSheet(100))
   
-  const [stats, setStats] = useState(utils.stats())
-  const { total, correct, answered } = stats
-
-  const onGen = () => {
-    const s = sheetCreator(gen).createSheet(100)
+  const onGenClick = g => () => { 
+    const s = sheetCreator(g).createSheet(100)
     setSheet(s)
     setStats(s.utils.stats())
   }
 
+  const { sheetId, questions, answers, handlers, utils } = sheet
+  const [stats, setStats] = useState(utils.stats())
+  const { total, correct, answered } = stats
+
   return (
     <AppStyle>
       <h1>&nbsp;</h1>
-      <button
-        onClick={onGen}
-      >+</button>
+      <button onClick={onGenClick(genPlus12)}>+12</button>
+      <button onClick={onGenClick(genMinus8)}>-8</button>
       <Score
         total={total}
         correct={correct}
