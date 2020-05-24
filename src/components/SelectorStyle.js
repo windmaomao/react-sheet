@@ -13,7 +13,6 @@ const SelectorStyle = styled.div`
     margin: 0.1rem 0;
     cursor: pointer;
     font-size: 22px;
-    font-family: monospace;
   }  
 `
 

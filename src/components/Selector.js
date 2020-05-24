@@ -2,8 +2,9 @@ import React from 'react'
 import { sheetCreator, arithmeticGen } from '../utils'
 import SelectorStyle from './SelectorStyle'
 
-const genPlus12 = arithmeticGen({ max: 12, operator: '+' }).gen
-const genMinus12 = arithmeticGen({ max: 12, operator: '-' }).gen
+const genPlus = arithmeticGen({ max: 12, operator: '+' }).gen
+const genMinus = arithmeticGen({ max: 12, operator: '-' }).gen
+const genMult = arithmeticGen({ max: 10, operator: '*' }).gen
 
 const Selector = ({ onSelect }) => {
   const onClick = g => () => {
@@ -13,11 +14,14 @@ const Selector = ({ onSelect }) => {
 
   return (
     <SelectorStyle>
-      <button onClick={onClick(genPlus12)}>
+      <button onClick={onClick(genPlus)}>
         +
       </button>
-      <button onClick={onClick(genMinus12)}>
+      <button onClick={onClick(genMinus)}>
         -
+      </button>
+      <button onClick={onClick(genMult)}>
+        *
       </button>
     </SelectorStyle>
   )
