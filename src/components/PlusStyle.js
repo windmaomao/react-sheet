@@ -41,6 +41,12 @@ const PlusStyle = styled.div`
     color: ${color};
     outline: 0;
   }
+
+  .index {
+    float: left;
+    font-size: 11px;
+    text-align: left;
+  }
 `
 
 export default PlusStyle

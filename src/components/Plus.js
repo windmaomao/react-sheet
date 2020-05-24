@@ -18,7 +18,7 @@ const keysOnly = [
  * @param {bool} error error
  */
 const Plus = ({ 
-  onAnswer, first, second, operator,
+  i, onAnswer, first, second, operator,
   active, error, onFocus
 }) => {
   const inputRef = useRef(null)
@@ -44,20 +44,23 @@ const Plus = ({
   }
 
   return (
-    <PlusStyle
-      active={active}
-      error={error}
-    >
-      <div>{first}</div>
-      <div>{operator} &nbsp;&nbsp;{second}</div>
-      <div>
-        <input
-          ref={inputRef}
-          onKeyDown={onKeyDown}
-          onFocus={onFocus}
-        />
-      </div>
-    </PlusStyle>
+    <div>
+      <div className="index">{i + 1})</div>
+      <PlusStyle
+        active={active}
+        error={error}
+      >
+        <div>{first}</div>
+        <div>{operator} &nbsp;&nbsp;{second}</div>
+        <div>
+          <input
+            ref={inputRef}
+            onKeyDown={onKeyDown}
+            onFocus={onFocus}
+          />
+        </div>
+      </PlusStyle>
+    </div>
   )
 }
 

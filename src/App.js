@@ -7,7 +7,7 @@ const gen = arithmeticGen({ max: 12, operator: '+' }).gen
 
 const App = () => {
   const [sheet, setSheet] = useState(sheetCreator(gen).createSheet(100))
-  const { questions, answers, handlers, utils } = sheet
+  const { sheetId, questions, answers, handlers, utils } = sheet
   
   const [stats, setStats] = useState(utils.stats())
   const { total, correct, answered } = stats
@@ -21,15 +21,16 @@ const App = () => {
   return (
     <AppStyle>
       <h1>&nbsp;</h1>
-      {/* <button
+      <button
         onClick={onGen}
-      >+</button> */}
+      >+</button>
       <Score
         total={total}
         correct={correct}
         answered={answered}
       />
       <Sheet 
+        key={sheetId}
         questions={questions}
         answers={answers}
         handlers={handlers}

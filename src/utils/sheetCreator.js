@@ -1,3 +1,4 @@
+let sheetId = 0
 const sheetCreator = (gen) => {
   return {
     createSheet: n => {
@@ -27,7 +28,8 @@ const sheetCreator = (gen) => {
 
       const utils = { touched, checked, stats }
 
-      return { questions, answers, handlers, utils }
+      sheetId++
+      return { sheetId, questions, answers, handlers, utils }
     }
   }
 }

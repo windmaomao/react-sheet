@@ -27,6 +27,7 @@ const Sheet = ({
     <SheetStyle>
       {questions.map((q, i) => (
         <Plus
+          i={i}
           key={i}
           onFocus={onSelect(i)}
           active={i === activeIndex}
