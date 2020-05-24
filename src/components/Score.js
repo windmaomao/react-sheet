@@ -7,7 +7,9 @@ const Score = ({ total, correct, answered }) => {
       <div>
         <div>Total: &nbsp; {total}</div>
         <div>Correct: &nbsp; {correct}</div>
-        <div>Answered: &nbsp; {answered}</div>
+        <div>Error: &nbsp; 
+          <span className="error">{answered - correct}</span>
+        </div>
       </div>
     </ScoreStyle>
   )

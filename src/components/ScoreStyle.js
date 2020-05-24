@@ -13,6 +13,9 @@ const ScoreStyle = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    .error {
+      color: coral;
+    }
   }
 `
 
