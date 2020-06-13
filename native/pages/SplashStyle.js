@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 
-const AppStyle = styled.View`
+const SplashStyle = styled.View`
   flex: 1;
   justify-content: flex-end;
   align-items: center;
   background-color: #F5FCFF;
 `
 
-export default AppStyle
+export default SplashStyle
 
 const TextStyle = styled.Text`
   font-size: 20px;
