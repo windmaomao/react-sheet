@@ -1,14 +1,20 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { Text } from 'react-native'
+import QuestionStyle from './QuestionStyle'
 
-const Question = ({ i, first, second, op }) => {
+const Question = ({ 
+  i, first, second, op,
+  answered, 
+}) => {
   return (
-    <View>
+    <QuestionStyle>
       <Text>{i})</Text>
       <Text>{first}</Text>
       <Text>{op}</Text>
       <Text>{second}</Text>
-    </View>
+      <Text>=</Text>
+      <Text>?</Text>
+    </QuestionStyle>
   )
 }
 
