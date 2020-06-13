@@ -1,5 +1,5 @@
 import React from 'react'
-import SplashStyle, { TextStyle, BackgroundStyle } from '././SplashStylee'
+import SplashStyle, { TextStyle, BackgroundStyle } from './SplashStyle'
 import mathImg from '../assets/math.jpg'
 
 export default function App() {
