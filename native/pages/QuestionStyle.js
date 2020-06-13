@@ -4,7 +4,7 @@ const QuestionStyle = styled.View`
   flex-direction: row;
   justify-content: space-around;
   align-items: flex-end;
-  border-width: 1;
+  border-width: 1px;
   border-color: #d6d7da;
   padding: 20px;
 `
