@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const AppStyle = styled.View`
   flex: 1;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   background-color: #F5FCFF;
 `
@@ -21,4 +21,11 @@ const SubTextStyle = styled.Text`
   margin-bottom: 5px;
 `
 
-export { TextStyle, SubTextStyle }
+const BackgroundStyle = styled.Image`
+  bottom: 0;
+  flex: 1;
+  align-self: stretch;
+  width: 100%;
+`
+
+export { TextStyle, SubTextStyle, BackgroundStyle }
