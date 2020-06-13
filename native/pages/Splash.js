@@ -1,7 +1,7 @@
 import React from 'react'
-import { Button } from 'react-native'
-import SplashStyle, { TextStyle, BackgroundStyle } from './SplashStyle'
-import mathImg from '../assets/math.jpg'
+import { Button, Image } from 'react-native'
+import SplashStyle from './SplashStyle'
+import mathImg from '../assets/splash.jpg'
 
 const Splash = ({ navigation }) => {
   const onPress = () => {
@@ -10,9 +10,13 @@ const Splash = ({ navigation }) => {
 
   return (
     <SplashStyle>
-      <BackgroundStyle source={mathImg} />
-      <TextStyle>Welcome to QMath</TextStyle>
-      <Button onPress={onPress} title="Start" />
+      <Image
+        source={mathImg} 
+      />
+      <Button 
+        onPress={onPress} 
+        title="Welcome to QMath" 
+      />
     </SplashStyle>
   )
 }
