@@ -5,7 +5,7 @@ import arithmeticGen from '../utils/arithmeticGen'
 import sheetCreator from '../utils/sheetCreator'
 
 const gen = arithmeticGen(10, '+')
-const sheet = sheetCreator(gen).createSheet(30)
+const sheet = sheetCreator(gen).createSheet(100)
 
 const questions = [
   { i: 1, first: 2, second: 8, op: '+' },
