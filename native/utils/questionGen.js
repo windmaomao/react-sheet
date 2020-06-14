@@ -2,7 +2,7 @@ const randomInt = (min, max) => (
   Math.floor(Math.random() * (max - min)) + min
 )
 
-const arithmeticGen = (op = '+', min = 0, max = 10) => {
+const questionGen = (op = '+', min = 0, max = 10) => {
   const gen = (id) => {
     const nums = [
       randomInt(min, max), 
@@ -30,4 +30,4 @@ const arithmeticGen = (op = '+', min = 0, max = 10) => {
   return gen
 }
 
-export default arithmeticGen
+export default questionGen
