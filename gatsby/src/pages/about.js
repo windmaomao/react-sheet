@@ -1,10 +1,10 @@
 import React from "react"
-import Header from "./header"
+import { Menu } from "../components"
 
 export default function About() {
   return (
     <div style={{ color: `teal` }}>
-      <Header />
+      <Menu />
       <h1>Such wow. Very React.</h1>
     </div>
   )

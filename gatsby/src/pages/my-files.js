@@ -1,11 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Header from './header'
+import { Menu } from "../components"
 
 export default function MyFiles({ data }) {
   return (
     <div>
-      <Header />
+      <Menu />
       <h1>My Site's Files</h1>
       <table>
         <thead>

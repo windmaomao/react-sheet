@@ -1,12 +1,12 @@
 import React from "react"
 import { Link } from "gatsby"
-import Header from "./header"
+import { Menu } from "../components"
 
 export default function Home({ data }) {
   const title = data.site.siteMetadata.title
   return (
     <>
-      <Header /> 
+      <Menu /> 
       <h1>{title}!</h1>
       <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
       {data.allMarkdownRemark.edges.map(({ node }) => (
