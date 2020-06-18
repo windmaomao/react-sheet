@@ -6,6 +6,7 @@ export default function Header() {
   return (
     <MenuStyle>
       <Link to="/">Home</Link>
+      <Link to="/blogs">Blogs</Link>
       <Link to="/my-files">Files</Link>
       <Link to="/about">About</Link>
     </MenuStyle>
