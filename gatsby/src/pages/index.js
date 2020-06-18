@@ -7,8 +7,18 @@ export default function Home({ data }) {
     <>
       <Link to="/about/">About</Link>    
       <h1>{title}!</h1>
-      <p>What a world.</p>
-      <img src="https://source.unsplash.com/random/400x200" alt="" />
+      <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
+      {data.allMarkdownRemark.edges.map(({ node }) => (
+        <div key={node.id}>
+          <h3>
+            {node.frontmatter.title}{" "}
+            <span>
+              — {node.frontmatter.date}
+            </span>
+          </h3>
+          <p>{node.excerpt}</p>
+        </div>
+      ))}
     </>
   )
 }
@@ -18,6 +28,19 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+    allMarkdownRemark {
+      totalCount
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date(formatString: "DD MMMM, YYYY")
+          }
+          excerpt
+        }
       }
     }
   }
