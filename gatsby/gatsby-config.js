@@ -6,20 +6,13 @@
 
 module.exports = {
   siteMetadata: {
-    title: `Fang's Qplot`
+    title: `Qplot`
   },
   plugins: [
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `src`,
-        path: `${__dirname}/src/`,
-      },
-    },
-    {
       resolve: `gatsby-theme-blog`,
       options: {
-        basePath: `/blogs`,
+        basePath: `/`,
       },
     },
   ],

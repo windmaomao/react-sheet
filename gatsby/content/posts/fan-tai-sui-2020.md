@@ -1,7 +1,7 @@
 ---
 title: "Fan Tai Sui 2020"
 date: "2020-02-25"
-tags:  ["fortune"]
+tags:  ["chitchat"]
 excerpt: "Fan Tai Sui, is when there is a Fan going on with this cycle, meaning an interruption, obstacle or obstructing force that is aggressively putting resistance to the cycle, stopping you from getting your “package” from the Yuen Sun."
 ---
 
