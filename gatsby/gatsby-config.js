@@ -6,7 +6,7 @@
 
 module.exports = {
   siteMetadata: {
-    title: 'Qplot Gatsby'
+    title: `Fang's Qplot`
   },
   plugins: [
     {
@@ -15,13 +15,6 @@ module.exports = {
         name: `src`,
         path: `${__dirname}/src/`,
       },
-    },
-    `gatsby-transformer-remark`,
-    {
-      resolve: 'gatsby-plugin-typography',
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      }
     },
     {
       resolve: `gatsby-theme-blog`,
