@@ -5,11 +5,12 @@
  */
 
 module.exports = {
+  pathPrefix: `/satellite`,
   siteMetadata: {
     title: `Qplot Satellite`,
     author: `Windmaomao`,
     description: `Windmaomoa's Qplot.`,
-    siteUrl: `https://qplot.com/satellite/`,
+    siteUrl: `https://qplot.com`,
     social: [
       {
         name: `LinkedIn`,

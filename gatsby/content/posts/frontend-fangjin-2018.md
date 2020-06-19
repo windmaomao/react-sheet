@@ -3,7 +3,6 @@ title: "Senior Front-End Engineer"
 date: "2018-12-22"
 tags:  ["resume", "portfolio", "fangjin"]
 excerpt: "I make websites or apps using reusable module and components with Javascript framework. My latest accomplishments focus on the building of plug-and-play UI library with unified look and feel."
-image: https://qp-photo.s3.amazonaws.com/qplot_linkedIN_home.png
 ---
 
 ## Fang Jin
@@ -31,11 +30,11 @@ Highly Commended award in Best Technology Initiative in Europe!, the 140th Finan
 
 Recognized for outstanding performance, for the exceptional UI framework build. Deutsche Bank, US.
 
-#### Front Cover Design, Sep 2010
+#### Book Cover Design, Sep 2010
 
-Accepted article and front cover design for the book and magazine. Book "Multi-scale Modeling of Cancer", Journal Nonlinearity 23(2010)
+Accepted article and front cover design for the book and magazine. Book "Multi-scale Modeling of Cancer", and Journal Nonlinearity 23(2010)
 
-### Others
+### Activities
 
 #### Advent of Code, 2019
 Compete for 2019 and rank #8 within the company
