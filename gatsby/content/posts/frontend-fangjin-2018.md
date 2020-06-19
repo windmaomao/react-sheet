@@ -1,7 +1,7 @@
 ---
 title: "Senior Front-End Engineer"
 date: "2018-12-22"
-tags:  ["resume", "portfolio"]
+tags:  ["resume", "portfolio", "fangjin"]
 excerpt: "I make websites or apps using reusable module and components with Javascript framework. My latest accomplishments focus on the building of plug-and-play UI library with unified look and feel."
 ---
 
