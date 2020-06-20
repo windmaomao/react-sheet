@@ -5,8 +5,8 @@ export default () => (
   <div
     css={css({
       fontStyle: 'italic',
-    })}  
+    })}
   >
-    with strategy, alogrithm, website, app and more ...
+    with strategy, alogrithm, design and more ...
   </div>
 )
