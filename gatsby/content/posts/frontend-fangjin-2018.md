@@ -1,6 +1,6 @@
 ---
 title: "Senior Front-End Engineer"
-date: "2018-12-22"
+date: "2017-02-01"
 tags:  ["resume", "portfolio"]
 excerpt: "I make websites or apps using reusable web modules and components. My latest accomplishments focus on the building of plug and play (PnP) UI library with unified look and feel across multiple devices."
 ---
