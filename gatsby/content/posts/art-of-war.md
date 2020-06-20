@@ -5,6 +5,12 @@ tags:  ["strategy", "war"]
 excerpt: "Sun Tzu said: The art of war is of vital importance to the State. It is a matter of life and death, a road either to safety or to ruin. Hence it is a subject of inquiry which can on no account be neglected."
 ---
 
+**TOC:**
+
+- [始计篇](#始计篇) [作战篇](#作战篇) [谋攻篇](#谋攻篇) [军形篇](#军形篇) [兵势篇](#兵势篇) [虚实篇](#虚实篇) [军争篇](#军争篇)
+- [九变篇](#九变篇) [行军篇](#行军篇) [地形篇](#地形篇) [九地篇](#九地篇) [火攻篇](#火攻篇) [用间篇](#用间篇) [心得篇](#心得篇)
+
+
 # 始计篇
 
 > 孙子曰：兵者，国之大事，死生之地，存亡之道，不可不察也。

@@ -1,17 +1,20 @@
 ---
 title: "Senior Front-End Engineer"
 date: "2018-12-22"
-tags:  ["resume", "portfolio", "fangjin"]
-excerpt: "I make websites or apps using reusable module and components with Javascript framework. My latest accomplishments focus on the building of plug-and-play UI library with unified look and feel."
+tags:  ["resume", "portfolio"]
+excerpt: "I make websites or apps using reusable web modules and components. My latest accomplishments focus on the building of plug and play (PnP) UI library with unified look and feel across multiple devices."
 ---
 
 ## Fang Jin
 
-I make websites or apps using reusable module and components with Javascript framework. My latest accomplishments focus on the building of plug-and-play UI library with unified look and feel.
+I make websites or apps using reusable web modules and components. My latest accomplishments focus on the building of plug and play (PnP) UI library with unified look and feel across multiple devices.
 
-- 9 Years Prototyping with _CSS_ and _Sass_
-- 6 Years _React_ and _Angular_
-- 5 Years _Functional Programming_
+- 9 Years, code with _React_ and _Javascript_
+- 9 Years, design with _CSS_ and _Sass_
+- 5 Years, practitioner of _Functional Programming_
+- 3 Years, manager of agile tech team
+
+Check out more on my [Awards](#awards) and [Experience](#experience).
 
 ### Education
 
@@ -29,6 +32,8 @@ Highly Commended award in Best Technology Initiative in Europe!, the 140th Finan
 #### Recognition Award, Jan 2017
 
 Recognized for outstanding performance, for the exceptional UI framework build. Deutsche Bank, US.
+
+> "Fang continues to build his MC profile globally and is well respected across his peers group and stakeholders. Fang has helped build complex business solutions that can sustain a high level of performance in CE where he has proven himself. He should be considered for promotion in the next round." - performance review from Deutsche Bank
 
 #### Book Cover Design, Sep 2010
 
@@ -48,10 +53,9 @@ College math class teacher for two semesters
 #### Stack Overflow
 [![](https://stackoverflow.com/users/flair/288096.png)](https://stackoverflow.com/users/288096/windmaomao)
 
+# Experience
 ## Credit Suisse, 2019 -
-Served as the UI architect and tech lead for Credit Suisse compliance team.
-
-I am responsible of architecting website pages and designing the UI/UX library conforming to the company branding look and feel.
+Served as the UI architect and tech lead for Credit Suisse compliance team, responsible for architecting websites and designing the UI/UX library following the company branding.
 
 I manage the tech team of size 10 (developer mostly), work with the business analysis and the corporate designer, run typical bi-weekly sprints and regularly report to the project owner.
 
@@ -59,33 +63,36 @@ I work with the L1 production support team and actively address L2/3 production 
 
 ### Internal Compliance, Jan 2019 - Jan 2020
 
-![iComply PA Trade](https://qp-photo.s3.amazonaws.com/icomply_pat_title.png)
-
 Internal Compliance is composed of collection of flagship products in the employee compliance space which includes personal account trading, restricted list, registration and on-boarding, manager supervisory reports and team view.
 
-Highlights:
+![iComply PA Trade](https://qp-photo.s3.amazonaws.com/icomply_pat_title.png)
 
-- React: Community React as our baseline for UI development
+**Highlights**
+
+- React: Use community react as the baseline for UI development
 - Branding: Apply company brand-net styling UI material for consistency
-- Scalability: Design scalable architect for large website with multiple application domain
-- Account Disclosure: Multiple stages of approval workflow for account disclosure
-- Trading Disclosure: Complex form fields related to Security trading domain
-- Supervisory Report: Workflow for displaying and approve supervisory summary report
-- Employee Proxy: Workflow for assigning another employee as proxy for trading operations
-- Manager Mapping: Workflow for mapping employee to different managers within the company
-
+- Scalability: Design scalable architect across multiple application domains
+- Workflow: Multiple stages of approval workflow for account disclosure
+- Disclosure: Complex form fields related to Security trading domain
+- Report: Workflow for displaying and approve supervisory summary report
+- Proxy: Workflow for assigning another employee as proxy for trading
+- Manager: Workflow for mapping employee to different managers
 
 ### Outside Business Interest, Feb 2020 -
 
-![iComply PA Trade](https://qp-photo.s3.amazonaws.com/obi_dashboard_design.png)
-
 Outside Business Interest is a product in Employee Compliance space which enables staff of bank to submit their Outside Business activity (Private Investments, Political Activities, Outside Business Interests) and facilitates its review and approval process.
 
-Highlights:
+![iComply PA Trade](https://qp-photo.s3.amazonaws.com/obi_dashboard_design.png)
 
-- React: Build highly reusable UI Library as our baseline for application development
-- Form: Design large form with various of input widget, ex. type-head, date-picker, etc.
+**Highlights**
 
+- React: Build highly reusable UI Library to speed up development
+- Branding: Bake company brand styling into the core UI library
+- Role: Support different authorization usages to the public site
+- Crud: Design form crud engine to facilitate form creation and review
+- Form: Design collection of complex form input widgets
+- Notification: Cron job and email upon reminder and confirmation
+- Migration: Migrate legacy application data as add-on to the new platform
 
 ## MercuryGate International, 2018
 UI React Developer
@@ -94,6 +101,8 @@ UI React Developer
 #### Sep 2018 - Jan 2019
 
 Management of equipments for carriers with different origin and destination and availability settings. Transaction page submission with multiple equipments with error handling and display on each row and each field.
+
+![Custom Multi-select Location](https://s3.amazonaws.com/qp-photo/mg-posted-origin-destinations.png)
 
 **Highlights**
 
@@ -107,8 +116,6 @@ Management of equipments for carriers with different origin and destination and 
 - Datepicker: Date range picker for equipment availablility
 - Lightbox: Form sliding from edge of screen and pinned on the screen
 - Pill input: Custom widget for selecting items delimitated by comma and displayed as pill label with hover message
-
-![Custom Multi-select Location](https://s3.amazonaws.com/qp-photo/mg-posted-origin-destinations.png)
 
 ### Shipping Order Dashboard
 #### Aug 2018 - Sep 2018
