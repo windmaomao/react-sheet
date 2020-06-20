@@ -23,11 +23,7 @@ module.exports = {
     ],
   },
   plugins: [
-    {
-      resolve: `gatsby-theme-blog`,
-      options: {
-        basePath: `/`,
-      },
-    },
+    `gatsby-theme-blog`,
+    `gatsby-theme-blog-tags`
   ],
 }

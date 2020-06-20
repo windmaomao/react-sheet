@@ -4,13 +4,16 @@ import { Layout } from '../components'
 
 export default ({ data }) => {
   const site = data.site.siteMetadata
-  const tags = data.allBlogPost.distinct
+  const tags = data.allBlogPost.group
+  console.log(tags)
   return (
     <Layout site={site}>
       <h1>Tags</h1>
       <ul>
-        {tags.map(t => (
-          <li key={t}>{t}</li>
+        {tags.map(v => (
+          <li key={v.tag}>
+            {v.tag} ({v.totalCount})
+          </li>
         ))}
       </ul>
     </Layout>
@@ -25,7 +28,10 @@ export const pageQuery = graphql`
       }
     }
     allBlogPost {
-      distinct(field: tags)
+      group(field: tags) {
+        tag: fieldValue
+        totalCount
+      }
     }
   }
 `

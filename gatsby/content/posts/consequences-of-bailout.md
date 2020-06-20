@@ -1,7 +1,7 @@
 ---
 title: "Consequences of the Bailout"
 date: "2018-07-26"
-tags:  ["finance", "philosophy"]
+tags:  ["finance", "philosophy", "frontpage"]
 excerpt: "There's nothing wrong to protect your people, your society or your finance. We should be thankful if someone is protecting us when we are kids. However, every action comes with its consequences. And a grow-up should accept the consequences."
 ---
 
