@@ -2,8 +2,10 @@
 title: "Math Sheet in Markdown"
 date: "2020-07-03"
 tags:  ["sheet", "math", "frontpage"]
-excerpt: "Have you ever tried to give your kids some math sheet to practice. Seems to me, it can be written using markdown format pretty easy. Here I'm showing couple of different ways for `13 + 9` = _____"
+excerpt: "Have you ever tried to give your kids some math sheet to practice. Here I'm showing couple of different ways using markdown for math question `13 + 9` = _____."
 ---
+
+import Plus from '../components/Plus'
 
 ![](https://happynumbers.com/assets/home/home-image-996da980c7ad9ce2366c7bb9358b8954.svg)
 
@@ -14,6 +16,16 @@ excerpt: "Have you ever tried to give your kids some math sheet to practice. See
 
 ### 2. 8 + 11 = ____
 <!-- 19 -->
+
+### 3.
+
+<Plus
+  i={2}
+  first="19"
+  second="17"
+  operator="+"
+  onAnswer={() => {}}
+/>
 
 ### Q: 10 questions
 
