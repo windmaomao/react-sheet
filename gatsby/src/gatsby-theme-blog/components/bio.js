@@ -7,6 +7,6 @@ export default () => (
       fontStyle: 'italic',
     })}
   >
-    with strategy, alogrithm, design and more ...
+    with strategy, design, system and more ...
   </div>
 )
