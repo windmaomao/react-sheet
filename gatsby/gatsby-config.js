@@ -23,7 +23,6 @@ module.exports = {
     ],
   },
   plugins: [
-    `gatsby-theme-blog`,
-    `gatsby-theme-blog-tags`
+    `gatsby-theme-blog`
   ],
 }
