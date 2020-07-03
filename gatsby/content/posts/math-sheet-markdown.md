@@ -1,7 +1,7 @@
 ---
 title: "Math Sheet in Markdown"
 date: "2020-07-03"
-tags:  ["sheet", "math", "frontpage"]
+tags:  ["math", "markdown"]
 excerpt: "Have you ever tried to give your kids some math sheet to practice. Here I'm showing couple of different ways using markdown for math question `13 + 9` = _____."
 ---
 

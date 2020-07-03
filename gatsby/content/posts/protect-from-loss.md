@@ -1,7 +1,7 @@
 ---
 title: "Protect from a big loss, sell yourself an insurance plan"
 date: "2017-11-11"
-tags:  ["finance", "philosophy", "frontpage"]
+tags:  ["finance", "philosophy"]
 excerpt: "You need to learn more about some human nature, especially yourself, ex. your physical limit, your tolerance, your patience, everything truth about yourself so that you can design your own insurance plan to be alive. If you are set to win, you need to look for some insurance, the protection from the big loss, from the very beginning."
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Angular, React and Commons"
 date: "2018-02-19"
-tags:  ["algorithm", "javascript", "frontpage"]
+tags:  ["framework", "javascript"]
 excerpt: "Web frameworks are marketing words to me these days. Everyone knows something about them. But trust me, even developers are not clear about what they are and what they will do. The world is moving too fast."
 ---
 

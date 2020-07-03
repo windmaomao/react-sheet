@@ -1,7 +1,7 @@
 ---
 title: "孙子兵法"
 date: "2019-01-27"
-tags:  ["strategy", "war", "philosophy", "Chinese"]
+tags:  ["strategy", "philosophy"]
 excerpt: "Sun Tzu said: The art of war is of vital importance to the State. It is a matter of life and death, a road either to safety or to ruin. Hence it is a subject of inquiry which can on no account be neglected."
 ---
 
