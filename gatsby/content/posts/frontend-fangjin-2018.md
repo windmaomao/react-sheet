@@ -1,9 +1,11 @@
 ---
 title: "Senior Front-End Engineer"
-date: "2017-02-01"
+date: "2020-06-15"
 tags:  ["resume", "portfolio"]
 excerpt: "I make websites or apps using reusable web modules and components. My latest accomplishments focus on the building of plug and play (PnP) UI library with unified look and feel across multiple devices."
 ---
+
+![](https://qp-photo.s3.amazonaws.com/brandnet_components_mind.png)
 
 ## Fang Jin
 
@@ -15,6 +17,7 @@ I make websites or apps using reusable web modules and components. My latest acc
 - 3 Years, manager of agile tech team
 
 Check out more on my [Awards](#awards) and [Experience](#experience).
+
 
 ### Education
 

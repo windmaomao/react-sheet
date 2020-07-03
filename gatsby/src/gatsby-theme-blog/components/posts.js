@@ -5,11 +5,12 @@ import Footer from "gatsby-theme-blog/src/components/home-footer"
 import PostList from "gatsby-theme-blog/src/components/post-list"
 
 const tag = location => {
-  const part = location.pathname.split('/').pop()
-  return part || 'frontpage'
+  if (location.pathname === '/') return 'frontpage'
+  return ''
 }
 
 const tagged = tag => item => {
+  if (!tag) return true
   return item.node.tags.indexOf(tag) >= 0
 }
 
