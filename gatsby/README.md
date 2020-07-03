@@ -2,6 +2,7 @@
 
 ## develop
 ```
+  rm -rf .cache
   gatsby develop
 ```
 

@@ -1,7 +1,7 @@
 ---
 title: "Topological sorting"
 date: "2019-12-22"
-tags:  ["algorithm", "advent-of-code"]
+tags:  ["algorithm", "advent-of-code", "draft"]
 excerpt: "In computer science, a topological sort or topological ordering of a directed graph is a linear ordering of its vertices such that for every directed edge uv from vertex u to vertex v, u comes before v in the ordering."
 ---
 
