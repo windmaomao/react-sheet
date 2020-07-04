@@ -1,6 +1,6 @@
 ---
-title: "Failure as in the current time frame"
-date: "2029-07-04"
+title: "Failure and how to move on"
+date: "2020-07-04"
 tags:  ["strategy", "philosophy"]
 excerpt: "Watching my four years old daughter, I can tell you most of time she wants to be a winner. Whether if it's climbing stairs or getting to the bathtub, it doesn't matter to her."
 ---
@@ -31,7 +31,7 @@ What we should do better is to move on after the failure. You fail, you should f
 
 This is something that I find very interesting about human. My daughter can cry for 5mins, and then I yelled at her to move on, and then she moved on. I can see myself (or others) cry about things for hours, days or even months. The thing what we all should learn is to cry and put a bit effort to move on. I help my daughter to get back to her foot after she cried, and I wish someone could've helped me in some of my past situations. You cried and cried, and then nobody come to help you and then you do something crazier. This is not good. We should have a way to fall back and start all over again.
 
-We don't have to pretend nothing happened, since it did happen. But it's not big deal, after we cried, we can just accept this is not a good situation, and we move on to see if we can build something again while understanding one of the outcome in the future could be the same if we are not thoughtful.
+We don't have to pretend nothing happened, since it did happen, and it'll be always with you. But it's not big deal, after we cried, we can just accept this is not a good situation, and we move on to see if we can build something again while understanding one of the outcome in the future could be the same if we are not thoughtful.
 
 Your body doesn't lie, but also it doesn't cooperate very well if it doesn't agree with you, like my two years old son. He doesn't like something, he'll have to express himself in a straight forward way.
 
