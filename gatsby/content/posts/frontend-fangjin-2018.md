@@ -26,11 +26,13 @@ M.S and Ph.D., Bio-molecular chemical engineering
 
 ### Awards
 
+![Highly Commended Award](https://qp-photo.s3.amazonaws.com/icomply_commended_award.jpg)
+
 #### Highly Commended Award, Dec 2019
 
 Highly Commended award in Best Technology Initiative in Europe!, the 140th Financial Innovation Awards. Credit Suisse, US.
 
-![Highly Commended Award](https://qp-photo.s3.amazonaws.com/icomply_commended_award.jpg)
+> "Fang's technical skills on React and broader UI technologies are second to none. Supervisory Report feature of PAT is one of the complex area of the Product and was very happy to see the way Fang took up the ownership to implement this feature. Fang is setting high standards for himself and team alike and has certainly raised the bar." - performance review from Credit Suisse
 
 #### Recognition Award, Jan 2017
 
