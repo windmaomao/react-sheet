@@ -1,5 +1,6 @@
 import React from 'react'
 import { css } from "theme-ui"
+import { AuthButton } from '../../components'
 
 export default () => (
   <div
@@ -8,5 +9,6 @@ export default () => (
     })}
   >
     with strategy, design, system and more ...
+    <AuthButton />
   </div>
 )

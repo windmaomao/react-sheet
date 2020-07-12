@@ -7382,13 +7382,6 @@ gatsby-theme-blog-core@^1.5.43:
     gatsby-transformer-sharp "^2.5.5"
     remark-slug "^5.1.2"
 
-gatsby-theme-blog-tags@^0.0.11:
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/gatsby-theme-blog-tags/-/gatsby-theme-blog-tags-0.0.11.tgz#459838a6879b737ce8a49c014374e7f4ec10912c"
-  integrity sha512-1eeZb4iCmrTpjZybbSi7JdgtYl49+z9Ouhy3QYb6XbPnEvZcUjOdsbf3XUpjnWAcRlY+eRr7/19m6jIOZt7hAg==
-  dependencies:
-    lodash.kebabcase "^4.1.1"
-
 gatsby-theme-blog@^1.6.43:
   version "1.6.43"
   resolved "https://registry.yarnpkg.com/gatsby-theme-blog/-/gatsby-theme-blog-1.6.43.tgz#5c4760bcc21cc95e78fe049a72780f014d6704ae"
@@ -9780,11 +9773,6 @@ lodash.isnumber@^3.0.0:
   resolved "https://registry.yarnpkg.com/lodash.isnumber/-/lodash.isnumber-3.0.3.tgz#3ce76810c5928d03352301ac287317f11c0b1ffc"
   integrity sha1-POdoEMWSjQM1IwGsKHMX8RwLH/w=
 
-lodash.kebabcase@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/lodash.kebabcase/-/lodash.kebabcase-4.1.1.tgz#8489b1cb0d29ff88195cceca448ff6d6cc295c36"
-  integrity sha1-hImxyw0p/4gZXM7KRI/21swpXDY=
-
 lodash.map@^4.4.0, lodash.map@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash.map/-/lodash.map-4.6.0.tgz#771ec7839e3473d9c4cde28b19394c3562f4f6d3"
@@ -10554,6 +10542,11 @@ neo-async@^2.5.0, neo-async@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
+
+netlify-identity-widget@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/netlify-identity-widget/-/netlify-identity-widget-1.8.0.tgz#a56ad82a7784b16523f023f7d26b41d77ed4b4ea"
+  integrity sha512-evc6OW6WsFectG31raqer/Ge1yZ3aweFja0RI85zvoHvjgiUPM5Je9xEnz1PELPRYW/Kz0ccANzng47RdgECBA==
 
 next-tick@^1.0.0:
   version "1.1.0"
