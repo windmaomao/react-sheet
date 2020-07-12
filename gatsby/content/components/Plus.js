@@ -53,6 +53,7 @@ const Plus = ({
         <div>{operator} &nbsp;&nbsp;{second}</div>
         <div>
           <input
+            aria-label="input"
             ref={inputRef}
             onKeyDown={onKeyDown}
             onFocus={onFocus}

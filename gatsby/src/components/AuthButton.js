@@ -1,8 +1,12 @@
 import React from 'react'
-import netlifyIdentity from 'netlify-identity-widget'
+// import netlifyIdentity from 'netlify-identity-widget'
 
-window.netlifyIdentity = netlifyIdentity;
-netlifyIdentity.init();
+let netlifyIdentity
+if (typeof window !== `undefined`) {
+  netlifyIdentity = require("netlify-identity-widget")
+  window.netlifyIdentity = netlifyIdentity
+  netlifyIdentity.init();
+}
 
 const netlifyAuth = {
   isAuthenticated: false,
