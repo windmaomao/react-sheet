@@ -23,6 +23,7 @@ module.exports = {
     ],
   },
   plugins: [
+    `gatsby-plugin-no-sourcemaps`,
     `gatsby-theme-blog`
   ],
 }

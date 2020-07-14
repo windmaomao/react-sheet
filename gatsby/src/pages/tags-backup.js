@@ -5,7 +5,6 @@ import { Layout } from '../components'
 export default ({ data }) => {
   const site = data.site.siteMetadata
   const tags = data.allBlogPost.group
-  console.log(tags)
   return (
     <Layout site={site}>
       <h1>Tags</h1>
