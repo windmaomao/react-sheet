@@ -14,6 +14,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "firebase": "^7.16.0",
     "gatsby": "^2.23.3",
     "gatsby-plugin-no-sourcemaps": "^2.2.0",
     "gatsby-theme-blog": "^1.6.43",
