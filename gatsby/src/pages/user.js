@@ -1,29 +1,48 @@
 import React, { useState, useEffect } from "react"
-import firebase from 'firebase'
+import firebase from 'firebase/app'
+import 'firebase/auth'
 import config from '../../.firebase'
 
-if (!firebase.apps.length)
-  firebase.initializeApp(config)
 const auth = firebase.auth
-
-function signInWithGoogle() {
-  const provider = new auth.GoogleAuthProvider()
-  return auth().signInWithPopup(provider)
+const fbAuth = {
+  init: () => {
+    if (!firebase.apps.length)
+      firebase.initializeApp(config)
+  },
+  onAuthStateChanged: cb => {
+    auth().onAuthStateChanged(cb)
+  },
+  signInWithGoogle: () => {
+    const provider = new auth.GoogleAuthProvider()
+    return auth().signInWithPopup(provider)
+  },
+  logout: () => {
+    return auth().signOut()
+  }
 }
+
+fbAuth.init()
 
 export default () => {
   const [authUser, setAuthUser] = useState(null)
   const [error, setError] = useState(null)
   useEffect(() => {
-    auth().onAuthStateChanged(user => {
-      console.log(user)
+    fbAuth.onAuthStateChanged(user => {
       setAuthUser(user)
     })
   }, [setAuthUser])
 
   const googleSignIn = async () => {
     try {
-      await signInWithGoogle()
+      await fbAuth.signInWithGoogle()
+    } catch (error) {
+      setError(error.message)
+    }
+  }
+
+  const logout = async () => {
+    try {
+      await fbAuth.logout()
     } catch (error) {
       setError(error.message)
     }
@@ -31,14 +50,26 @@ export default () => {
 
   return (
     <div>
-      <h1>My Account</h1>
-      <p>
+      {authUser ? (
+        <div>
+          <img
+            title={authUser.displayName}
+            src={authUser.photoURL}
+            alt="profile"
+            width="24"
+            height="24"
+          />
+          <button
+            type="button"
+            onClick={logout}
+          >Logout</button>
+        </div>
+      ) : (
         <button
           type="button"
           onClick={googleSignIn}
         >Sign In Google</button>
-      </p>
-      <p>{authUser ? authUser.displayName : ''}</p>
+      )}
       <p>{error}</p>
     </div>
   )
