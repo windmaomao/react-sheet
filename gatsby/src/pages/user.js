@@ -43,6 +43,8 @@ fbAuth.init()
 export default () => {
   const [authUser, setAuthUser] = useState(null)
   const [error, setError] = useState(null)
+  const [repos, setRepos] = useState([])
+
   useEffect(() => {
     fbAuth.onAuthStateChanged(user => {
       setAuthUser(user)
@@ -62,7 +64,7 @@ export default () => {
       const res = await fbAuth.signInWithGithub()
       const token = res.credential.accessToken
       const repos = await fbAuth.getRepos(token)
-      console.log(repos)
+      setRepos(repos.reverse())
     } catch (error) {
       setError(error.message)
     }
@@ -105,6 +107,13 @@ export default () => {
         </span>
       )}
       <p>{error}</p>
+      <ul>
+        {repos.map(repo => (
+          <li key={repo.id} title={repo.created_at}>
+            {repo.name} ({repo.size})
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }
