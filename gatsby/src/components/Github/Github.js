@@ -1,20 +1,18 @@
 import React, { useState } from "react"
 import { fbAuth } from '../../utils'
 import Profile from './Profile'
+import Repos from './Repos'
 
 fbAuth.init()
 
 export default () => {
   const [loggedIn, setLoggedIn] = useState(false)
   const [error, setError] = useState(null)
-  const [repos, setRepos] = useState([])
 
   const login = async () => {
     try {
       await fbAuth.signInWithGithub()
       setLoggedIn(true)
-      const repos = await fbAuth.getRepos()
-      setRepos(repos.reverse())
     } catch (error) {
       setError(error.message)
     }
@@ -37,13 +35,7 @@ export default () => {
         onLogout={logout}
       />
       <p>{error}</p>
-      <ul>
-        {repos.map(repo => (
-          <li key={repo.id} title={repo.created_at}>
-            {repo.name} ({repo.size})
-          </li>
-        ))}
-      </ul>
+      {loggedIn && <Repos />}
     </div>
   )
 }
