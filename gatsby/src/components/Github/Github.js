@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { fbAuth } from '../utils'
+import { fbAuth } from '../../utils'
 
 fbAuth.init()
 
