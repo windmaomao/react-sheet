@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { fbAuth } from '../../utils'
+import Profile from './Profile'
 
 fbAuth.init()
 
@@ -35,28 +36,11 @@ export default () => {
 
   return (
     <div>
-      {authUser ? (
-        <div>
-          <img
-            title={authUser.displayName}
-            src={authUser.photoURL}
-            alt="profile"
-            width="24"
-            height="24"
-          />
-          <button
-            type="button"
-            onClick={logout}
-          >Logout</button>
-        </div>
-      ) : (
-        <span>
-          <button
-            type="button"
-            onClick={login}
-          >Sign In Github</button>
-        </span>
-      )}
+      <Profile
+        user={authUser}
+        onLogin={login}
+        onLogout={logout}
+      />
       <p>{error}</p>
       <ul>
         {repos.map(repo => (
