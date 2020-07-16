@@ -1,9 +1,9 @@
 import React, { useState } from "react"
-import { fbAuth } from '../../utils'
+import { ghAuth } from '../../utils'
 import Profile from './Profile'
 import Repos from './Repos'
 
-fbAuth.init()
+ghAuth.init()
 
 export default () => {
   const [loggedIn, setLoggedIn] = useState(false)
@@ -11,7 +11,7 @@ export default () => {
 
   const login = async () => {
     try {
-      await fbAuth.signInWithGithub()
+      await ghAuth.login()
       setLoggedIn(true)
     } catch (error) {
       setError(error.message)
@@ -20,7 +20,7 @@ export default () => {
 
   const logout = async () => {
     try {
-      await fbAuth.logout()
+      await ghAuth.logout()
       setLoggedIn(false)
     } catch (error) {
       setError(error.message)
@@ -30,7 +30,7 @@ export default () => {
   return (
     <div>
       <Profile
-        user={fbAuth.user}
+        user={ghAuth.user}
         onLogin={login}
         onLogout={logout}
       />

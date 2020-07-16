@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { fbAuth } from '../../utils'
+import { ghAuth } from '../../utils'
 
 export default () => {
   const [repos, setRepos] = useState([])
@@ -9,7 +9,7 @@ export default () => {
     async function fetch() {
       try {
         setLoading(true)
-        const repos = await fbAuth.getRepos()
+        const repos = await ghAuth.getRepos()
         setRepos(repos.reverse())
       }
       finally {
@@ -20,13 +20,13 @@ export default () => {
   }, [setRepos])
 
   return (
-    <ul>
+    <div>
       {loading && 'loading ...'}
       {repos.map(repo => (
-        <li key={repo.id} title={repo.created_at}>
+        <div key={repo.id} title={repo.created_at}>
           {repo.name} ({repo.size})
-        </li>
+        </div>
       ))}
-    </ul>
+    </div>
   )
 }
