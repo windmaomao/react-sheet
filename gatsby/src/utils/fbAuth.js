@@ -4,6 +4,8 @@ import config from '../../.firebase'
 
 const auth = firebase.auth
 const fbAuth = {
+  user: null,
+  token: null,
   init: () => {
     if (!firebase.apps.length)
       firebase.initializeApp(config)
@@ -17,17 +19,23 @@ const fbAuth = {
   },
   signInWithGithub: () => {
     const provider = new auth.GithubAuthProvider()
-    provider.addScope('user');
-    return auth().signInWithPopup(provider)
+    provider.addScope('user')
+    return auth().signInWithPopup(provider).then(
+      res => {
+        fbAuth.user = res.user
+        fbAuth.token = res.credential.accessToken
+        return fbAuth
+      }
+    )
   },
   logout: () => {
     return auth().signOut()
   },
   // Github apis
-  getRepos: (token) => {
+  getRepos: () => {
     const headers = {
       "Content-Type": `application/json`,
-      "Authorization": `Bearer ${token}`
+      "Authorization": `Bearer ${fbAuth.token}`
     }
     return fetch('https://api.github.com/user/repos', { headers })
       .then(res => {

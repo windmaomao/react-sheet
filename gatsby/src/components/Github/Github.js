@@ -1,25 +1,19 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { fbAuth } from '../../utils'
 import Profile from './Profile'
 
 fbAuth.init()
 
 export default () => {
-  const [authUser, setAuthUser] = useState(null)
+  const [loggedIn, setLoggedIn] = useState(false)
   const [error, setError] = useState(null)
   const [repos, setRepos] = useState([])
 
-  useEffect(() => {
-    fbAuth.onAuthStateChanged(user => {
-      setAuthUser(user)
-    })
-  }, [setAuthUser])
-
   const login = async () => {
     try {
-      const res = await fbAuth.signInWithGithub()
-      const token = res.credential.accessToken
-      const repos = await fbAuth.getRepos(token)
+      await fbAuth.signInWithGithub()
+      setLoggedIn(true)
+      const repos = await fbAuth.getRepos()
       setRepos(repos.reverse())
     } catch (error) {
       setError(error.message)
@@ -29,6 +23,7 @@ export default () => {
   const logout = async () => {
     try {
       await fbAuth.logout()
+      setLoggedIn(false)
     } catch (error) {
       setError(error.message)
     }
@@ -37,7 +32,7 @@ export default () => {
   return (
     <div>
       <Profile
-        user={authUser}
+        user={fbAuth.user}
         onLogin={login}
         onLogout={logout}
       />
