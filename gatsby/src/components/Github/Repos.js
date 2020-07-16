@@ -9,7 +9,7 @@ export default () => {
     async function fetch() {
       try {
         setLoading(true)
-        const repos = await ghAuth.getRepos()
+        const repos = await ghAuth.fetch('repos')
         setRepos(repos.reverse())
       }
       finally {

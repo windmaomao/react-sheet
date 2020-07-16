@@ -3,7 +3,10 @@ import 'firebase/auth'
 import config from '../../.firebase'
 
 const auth = firebase.auth
-const api = `https://api.github.com`
+const ghApi = `https://api.github.com`
+const apis = {
+  repos: `/user/repos`
+}
 const ghAuth = {
   user: null,
   token: null,
@@ -23,14 +26,19 @@ const ghAuth = {
     )
   },
   logout: () => {
-    return auth().signOut()
+    return auth().signOut().then(
+      () => {
+        ghAuth.user = null
+        ghAuth.token = null
+      }
+    )
   },
-  getRepos: () => {
+  fetch: name => {
     const headers = {
       "Content-Type": `application/json`,
       "Authorization": `Bearer ${ghAuth.token}`
     }
-    return fetch(`${api}/user/repos`, { headers })
+    return fetch(`${ghApi}${apis[name]}`, { headers })
       .then(res => {
         if (res.ok) return res.json()
         return []
