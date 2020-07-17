@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react"
-import { fbAuth } from '../../utils'
+import { ghAuth } from '../../utils'
 
 export default ({ repo }) => {
+  if (!repo) return null
+  
   const [contents, setContents] = useState([])
   const [loading, setLoading] = useState(false)
 
@@ -9,7 +11,7 @@ export default ({ repo }) => {
     async function fetch() {
       try {
         setLoading(true)
-        const res = await fbAuth.getContents(repo)
+        const res = await ghAuth.fetch(`/repos/${repo}/contents`)
         console.log(res)
         setContents(res)
       }
@@ -23,11 +25,11 @@ export default ({ repo }) => {
   return (
     <div>
       {loading && 'loading ...'}
-      // {repos.map(repo => (
-      //   <div key={repo.id} title={repo.created_at}>
-      //     {repo.name} ({repo.size})
-      //   </div>
-      // ))}
+      {contents.map(item => (
+        <div key={item.name} title={item.type}>
+          {item.name}
+        </div>
+      ))}
     </div>
   )
 }

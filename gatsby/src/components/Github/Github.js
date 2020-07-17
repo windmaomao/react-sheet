@@ -2,12 +2,14 @@ import React, { useState } from "react"
 import { ghAuth } from '../../utils'
 import Profile from './Profile'
 import Repos from './Repos'
+import Contents from './Contents'
 
 ghAuth.init()
 
 export default () => {
   const [loggedIn, setLoggedIn] = useState(false)
   const [error, setError] = useState(null)
+  const [repo, setRepo] = useState('')
 
   const login = async () => {
     try {
@@ -35,7 +37,16 @@ export default () => {
         onLogout={logout}
       />
       <p>{error}</p>
-      {loggedIn && <Repos />}
+      {loggedIn && (
+        <Repos
+          onRepo={setRepo}
+        />
+      )}
+      {loggedIn && (
+        <Contents
+          repo={repo}
+        />
+      )}
     </div>
   )
 }

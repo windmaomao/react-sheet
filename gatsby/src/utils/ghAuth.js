@@ -4,9 +4,6 @@ import config from '../../.firebase'
 
 const auth = firebase.auth
 const ghApi = `https://api.github.com`
-const apis = {
-  repos: `/user/repos`
-}
 const ghAuth = {
   user: null,
   token: null,
@@ -33,12 +30,12 @@ const ghAuth = {
       }
     )
   },
-  fetch: name => {
+  fetch: api => {
     const headers = {
       "Content-Type": `application/json`,
       "Authorization": `Bearer ${ghAuth.token}`
     }
-    return fetch(`${ghApi}${apis[name]}`, { headers })
+    return fetch(`${ghApi}${api}`, { headers })
       .then(res => {
         if (res.ok) return res.json()
         return []

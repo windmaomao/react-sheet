@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { ghAuth } from '../../utils'
 
-export default () => {
+export default ({ onRepo }) => {
   const [repos, setRepos] = useState([])
   const [loading, setLoading] = useState(false)
 
@@ -9,7 +9,7 @@ export default () => {
     async function fetch() {
       try {
         setLoading(true)
-        const repos = await ghAuth.fetch('repos')
+        const repos = await ghAuth.fetch('/user/repos')
         setRepos(repos.reverse())
       }
       finally {
@@ -19,12 +19,18 @@ export default () => {
     fetch()
   }, [setRepos])
 
+  const onSelect = repo => () => {
+    onRepo(`${repo.owner.login}/${repo.name}`)
+  }
+
   return (
     <div>
       {loading && 'loading ...'}
       {repos.map(repo => (
         <div key={repo.id} title={repo.created_at}>
-          {repo.name} ({repo.size})
+          <button onClick={onSelect(repo)}>
+            {repo.name} ({repo.size})
+          </button>
         </div>
       ))}
     </div>
