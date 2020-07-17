@@ -1,17 +1,24 @@
 import React, { useEffect, useState } from "react"
 import { ghAuth } from '../../utils'
 
+const isDir = item => item.type === 'dir'
+
 export default ({ repo }) => {
   if (!repo) return null
 
   const [contents, setContents] = useState([])
   const [loading, setLoading] = useState(false)
+  const [path, setPath] = useState('')
+
+  useEffect(() => {
+    setPath('')
+  }, [repo])
 
   useEffect(() => {
     async function fetch() {
       try {
         setLoading(true)
-        const res = await ghAuth.fetch(`/repos/${repo}/contents`)
+        const res = await ghAuth.fetch(`/repos/${repo}/contents/${path}`)
         // console.log(res)
         setContents(res)
       }
@@ -20,13 +27,25 @@ export default ({ repo }) => {
       }
     }
     fetch()
-  }, [setContents, repo])
+  }, [setContents, repo, path])
+
+
+
+  const onFile = item => () => {
+    if (isDir(item)) {
+      setPath(item.path)
+    }
+    console.log(item)
+  }
 
   return (
     <div>
       {contents.map(item => (
         <div key={item.name} title={item.type}>
-          {item.name}
+          <button onClick={onFile(item)}>
+            {isDir(item) ? '> ' : '. '}
+            {item.name}
+          </button>
         </div>
       ))}
       {loading && 'loading ...'}
