@@ -9,14 +9,16 @@ export default () => {
   const [url, setUrl] = useState('')
 
   return (
-    <div
-      css={css({
-        display: 'flex',
-      })}
-    >
+    <>
       <Repos onRepo={setRepo} />
-      <Contents repo={repo} onUrl={setUrl} />
-      <File url={url} />
-    </div>
+      <div
+        css={css({
+          display: 'flex',
+        })}
+      >
+        <Contents repo={repo} onUrl={setUrl} />
+        <File url={url} />
+      </div>
+    </>
   )
 }

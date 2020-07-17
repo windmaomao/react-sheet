@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { AiOutlineFolderOpen, AiOutlineFileText } from "react-icons/ai";
 import { ghAuth } from '../../utils'
 
 const isDir = item => item.type === 'dir'
@@ -38,13 +39,16 @@ export default ({ repo, onUrl }) => {
     console.log(item)
   }
 
+  const icon = item => (
+    isDir(item) ? <AiOutlineFolderOpen /> : <AiOutlineFileText />
+  )
+
   return (
     <div>
       {contents.map(item => (
         <div key={item.name} title={item.type}>
           <button onClick={onFile(item)}>
-            {isDir(item) ? '> ' : '. '}
-            {item.name}
+            {icon(item)}&nbsp;{item.name}
           </button>
         </div>
       ))}

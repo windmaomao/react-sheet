@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { AiOutlineGithub } from "react-icons/ai";
 import { ghAuth } from '../../utils'
 
 export default ({ onRepo }) => {
@@ -28,7 +29,8 @@ export default ({ onRepo }) => {
       {repos.map(repo => (
         <div key={repo.id} title={repo.created_at}>
           <button onClick={onSelect(repo)}>
-            {repo.name} ({repo.size})
+            <AiOutlineGithub />&nbsp;
+            {repo.name}
           </button>
         </div>
       ))}
