@@ -40,6 +40,13 @@ const ghAuth = {
         if (res.ok) return res.json()
         return []
       })
+  },
+  view: url => {
+    return fetch(url)
+      .then(res => {
+        if (res.ok) return res.text()
+        return ''
+      })
   }
 }
 

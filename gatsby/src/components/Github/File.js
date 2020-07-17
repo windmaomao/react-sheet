@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { ghAuth } from '../../utils'
 
 export default ({ url }) => {
   if (!url) return null
@@ -7,23 +8,24 @@ export default ({ url }) => {
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    async function fetchFile() {
+    async function fetch() {
       try {
         setLoading(true)
-        const res = await fetch(url)
-        console.log(res)
-        // setContents(res)
+        const res = await ghAuth.view(url)
+        setContent(res)
       }
       finally {
         setLoading(false)
       }
     }
-    fetchFile()
+    fetch()
   }, [setContent, url])
 
   return (
     <div>
-      {content}
+      <pre>
+        {content}
+      </pre>
       {loading && 'loading ...'}
     </div>
   )
