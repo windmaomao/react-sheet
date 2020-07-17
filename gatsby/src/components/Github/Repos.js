@@ -25,7 +25,6 @@ export default ({ onRepo }) => {
 
   return (
     <div>
-      {loading && 'loading ...'}
       {repos.map(repo => (
         <div key={repo.id} title={repo.created_at}>
           <button onClick={onSelect(repo)}>
@@ -33,6 +32,7 @@ export default ({ onRepo }) => {
           </button>
         </div>
       ))}
+      {loading && 'loading ...'}
     </div>
   )
 }

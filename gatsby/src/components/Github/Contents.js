@@ -3,7 +3,7 @@ import { ghAuth } from '../../utils'
 
 export default ({ repo }) => {
   if (!repo) return null
-  
+
   const [contents, setContents] = useState([])
   const [loading, setLoading] = useState(false)
 
@@ -12,7 +12,7 @@ export default ({ repo }) => {
       try {
         setLoading(true)
         const res = await ghAuth.fetch(`/repos/${repo}/contents`)
-        console.log(res)
+        // console.log(res)
         setContents(res)
       }
       finally {
@@ -24,12 +24,12 @@ export default ({ repo }) => {
 
   return (
     <div>
-      {loading && 'loading ...'}
       {contents.map(item => (
         <div key={item.name} title={item.type}>
           {item.name}
         </div>
       ))}
+      {loading && 'loading ...'}
     </div>
   )
 }
