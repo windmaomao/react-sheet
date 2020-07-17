@@ -3,7 +3,7 @@ import { ghAuth } from '../../utils'
 
 const isDir = item => item.type === 'dir'
 
-export default ({ repo }) => {
+export default ({ repo, onUrl }) => {
   if (!repo) return null
 
   const [contents, setContents] = useState([])
@@ -29,11 +29,11 @@ export default ({ repo }) => {
     fetch()
   }, [setContents, repo, path])
 
-
-
   const onFile = item => () => {
     if (isDir(item)) {
       setPath(item.path)
+    } else {
+      onUrl(item.download_url)
     }
     console.log(item)
   }
