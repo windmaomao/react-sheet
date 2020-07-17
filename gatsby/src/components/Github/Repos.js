@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { css, Spinner } from "theme-ui"
 import { AiOutlineGithub } from "react-icons/ai";
 import { ghAuth } from '../../utils'
 
@@ -25,7 +26,13 @@ export default ({ onRepo }) => {
   }
 
   return (
-    <div>
+    <div
+      css={css({
+        display: 'flex',
+        flexWrap: 'wrap',
+        marginBottom: '1rem'
+      })}
+    >
       {repos.map(repo => (
         <div key={repo.id} title={repo.created_at}>
           <button onClick={onSelect(repo)}>
@@ -34,7 +41,7 @@ export default ({ onRepo }) => {
           </button>
         </div>
       ))}
-      {loading && 'loading ...'}
+      {loading && <Spinner />}
     </div>
   )
 }

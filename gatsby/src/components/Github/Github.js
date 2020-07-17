@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Container, Alert, Close } from "theme-ui"
 import { ghAuth } from '../../utils'
 import Profile from './Profile'
 import Viewer from './Viewer'
@@ -28,14 +29,22 @@ export default () => {
   }
 
   return (
-    <div>
-      <Profile
-        user={ghAuth.user}
-        onLogin={login}
-        onLogout={logout}
-      />
-      <p>{error}</p>
-      {loggedIn && <Viewer />}
-    </div>
+    <>
+      <Container p={0}>
+        <Profile
+          user={ghAuth.user}
+          onLogin={login}
+          onLogout={logout}
+        />
+        {error && (
+          <Alert>
+            {error} <Close ml='auto' mr={-2} />
+          </Alert>
+        )}
+      </Container>
+      <Container p={1}>
+        {loggedIn && <Viewer />}
+      </Container>
+    </>
   )
 }

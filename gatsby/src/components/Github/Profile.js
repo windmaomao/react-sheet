@@ -1,4 +1,5 @@
 import React from "react"
+import { Avatar } from "theme-ui"
 
 export default ({
   user, onLogin, onLogout
@@ -14,12 +15,9 @@ export default ({
 
   return (
     <div>
-      <img
+      <Avatar
         title={user.displayName}
         src={user.photoURL}
-        alt="profile"
-        width="24"
-        height="24"
       />
       <button
         type="button"

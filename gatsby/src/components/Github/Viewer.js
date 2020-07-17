@@ -16,7 +16,13 @@ export default () => {
           display: 'flex',
         })}
       >
-        <Contents repo={repo} onUrl={setUrl} />
+        <div
+          css={css({
+            flex: '0 0 10rem',
+          })}
+        >
+          <Contents repo={repo} onUrl={setUrl} />
+        </div>
         <File url={url} />
       </div>
     </>
