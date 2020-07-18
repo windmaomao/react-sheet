@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Container, Alert, Close } from "theme-ui"
+import { Box, Alert, Close } from "theme-ui"
 import { ghAuth } from '../../utils'
 import Profile from './Profile'
 import Viewer from './Viewer'
@@ -30,7 +30,7 @@ export default () => {
 
   return (
     <>
-      <Container p={0}>
+      <Box p={3} bg='primary'>
         <Profile
           user={ghAuth.user}
           onLogin={login}
@@ -41,10 +41,10 @@ export default () => {
             {error} <Close ml='auto' mr={-2} />
           </Alert>
         )}
-      </Container>
-      <Container p={1}>
+      </Box>
+      <Box p={1}>
         {loggedIn && <Viewer />}
-      </Container>
+      </Box>
     </>
   )
 }

@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from "react"
-import { AiOutlineFolderOpen, AiOutlineFileText } from "react-icons/ai";
+import { Spinner, Text } from "theme-ui"
+import {
+  AiOutlineFolderOpen,
+  AiOutlineFileText,
+  AiOutlineGithub
+} from "react-icons/ai";
 import { ghAuth } from '../../utils'
 
 const isDir = item => item.type === 'dir'
@@ -43,8 +48,13 @@ export default ({ repo, onUrl }) => {
     isDir(item) ? <AiOutlineFolderOpen /> : <AiOutlineFileText />
   )
 
+  const repoParts = repo.split('/')
+
   return (
     <div>
+      <Text sx={{ fontSize: 0 }} p={1}>
+        <AiOutlineGithub />&nbsp;{repoParts[1]}
+      </Text>
       {contents.map(item => (
         <div key={item.name} title={item.type}>
           <button onClick={onFile(item)}>
@@ -52,7 +62,7 @@ export default ({ repo, onUrl }) => {
           </button>
         </div>
       ))}
-      {loading && 'loading ...'}
+      {loading && <Spinner size={14} />}
     </div>
   )
 }
