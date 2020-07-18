@@ -14,10 +14,11 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@mdx-js/mdx": "^1.6.11",
     "firebase": "^7.16.0",
-    "gatsby": "^2.23.3",
+    "gatsby": "^2.24.4",
     "gatsby-plugin-no-sourcemaps": "^2.2.0",
-    "gatsby-theme-blog": "^1.6.43",
+    "gatsby-theme-blog": "^2.0.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-icons": "^3.10.0",

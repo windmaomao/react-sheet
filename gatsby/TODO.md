@@ -5,6 +5,7 @@
 
 ## 07/17
 
+- render mdx
 - add spinner
 
 ## 07/03
