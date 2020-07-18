@@ -1,7 +1,23 @@
 import React, { useState, useEffect } from "react"
 import { Text } from "theme-ui"
 import { AiOutlineFileText } from "react-icons/ai"
+import ReactMarkdown from 'react-markdown'
 import { ghAuth } from '../../utils'
+
+const FileRender = ({ url, source }) => {
+  const urlParts = url.split('.')
+  const ext = urlParts.length ? urlParts.slice(-1)[0] : ''
+
+  switch (ext) {
+    case 'png':
+    case 'jpg':
+      return <img src={url} />
+    case 'md':
+      return <ReactMarkdown source={source} />
+    default:
+      return <pre>{source}</pre>
+  }
+}
 
 export default ({ url }) => {
   if (!url) return null
@@ -14,8 +30,10 @@ export default ({ url }) => {
       try {
         setLoading(true)
         const res = await ghAuth.view(url)
-        // const jsx = await mdx(res, {skipExport: true})
-        setContent(res)
+        setContent({
+          url: url,
+          source: res
+        })
       }
       finally {
         setLoading(false)
@@ -31,10 +49,7 @@ export default ({ url }) => {
       <Text sx={{ fontSize: 1 }} p={1}>
         <AiOutlineFileText />&nbsp;{urlParts.slice(-1)[0]}
       </Text>
-
-      <pre>
-        {content}
-      </pre>
+      {content && <FileRender {...content} />}
       {loading && 'loading ...'}
     </div>
   )
