@@ -11,7 +11,7 @@ const FileRender = ({ url, source }) => {
   switch (ext) {
     case 'png':
     case 'jpg':
-      return <img src={url} />
+      return <img src={url} alt="pic" />
     case 'md':
       return <ReactMarkdown source={source} />
     default:

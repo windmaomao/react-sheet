@@ -11,8 +11,10 @@ export default ({ onRepo }) => {
     async function fetch() {
       try {
         setLoading(true)
-        const repos = await ghAuth.fetch('/user/repos')
-        setRepos(repos.reverse())
+        const repos = await ghAuth.fetch(
+          `/user/repos?type=public&sort=updated`
+        )
+        setRepos(repos)
       }
       finally {
         setLoading(false)

@@ -1,8 +1,10 @@
 import React, { useState } from "react"
 import { Box, Alert, Close } from "theme-ui"
-import { ghAuth } from '../../utils'
 import Profile from './Profile'
 import Viewer from './Viewer'
+import GhContext from './GhContext'
+import Header from './Header'
+import { ghAuth } from '../../utils'
 
 ghAuth.init()
 
@@ -36,13 +38,13 @@ export default () => {
           onLogin={login}
           onLogout={logout}
         />
+      </Box>
+      <Box p={1}>
         {error && (
           <Alert>
             {error} <Close ml='auto' mr={-2} />
           </Alert>
         )}
-      </Box>
-      <Box p={1}>
         {loggedIn && <Viewer />}
       </Box>
     </>
