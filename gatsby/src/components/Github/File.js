@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
-// import mdx from '@mdx-js/mdx'
+import { Text } from "theme-ui"
+import { AiOutlineFileText } from "react-icons/ai"
 import { ghAuth } from '../../utils'
 
 export default ({ url }) => {
@@ -23,8 +24,14 @@ export default ({ url }) => {
     fetch()
   }, [setContent, url])
 
+  const urlParts = url.split('/')
+
   return (
     <div>
+      <Text sx={{ fontSize: 1 }} p={1}>
+        <AiOutlineFileText />&nbsp;{urlParts.slice(-1)[0]}
+      </Text>
+
       <pre>
         {content}
       </pre>

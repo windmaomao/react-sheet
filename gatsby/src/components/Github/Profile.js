@@ -1,6 +1,6 @@
 import React from "react"
 import { Avatar, Flex } from "theme-ui"
-import { AiOutlineLogout, AiOutlineGithub } from "react-icons/ai"
+import { AiOutlineGithub } from "react-icons/ai"
 import { Button } from '../common'
 
 export default ({

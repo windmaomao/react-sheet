@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { css, Spinner, Badge } from "theme-ui"
+import { css, Spinner } from "theme-ui"
 import { AiOutlineGithub } from "react-icons/ai";
 import { ghAuth } from '../../utils'
 
