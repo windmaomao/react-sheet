@@ -1,5 +1,6 @@
 # Todos
 
+- support own theme
 - support rss
 - add site favicon (manifest plugin doesn't work)
 

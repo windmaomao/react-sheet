@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+// import mdx from '@mdx-js/mdx'
 import { ghAuth } from '../../utils'
 
 export default ({ url }) => {
@@ -12,6 +13,7 @@ export default ({ url }) => {
       try {
         setLoading(true)
         const res = await ghAuth.view(url)
+        // const jsx = await mdx(res, {skipExport: true})
         setContent(res)
       }
       finally {
