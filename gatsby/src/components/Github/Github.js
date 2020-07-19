@@ -1,14 +1,15 @@
 import React, { useState } from "react"
-import { Box, Alert, Close } from "theme-ui"
+import { Box, Flex, Alert, Close } from "theme-ui"
 import Profile from './Profile'
+import Title from './Title'
 import Viewer from './Viewer'
 import GhContext from './GhContext'
-import Header from './Header'
 import { ghAuth } from '../../utils'
 
 ghAuth.init()
 
 export default () => {
+  const [site, setSite] = useState({ title: '' })
   const [loggedIn, setLoggedIn] = useState(false)
   const [error, setError] = useState(null)
 
@@ -31,13 +32,16 @@ export default () => {
   }
 
   return (
-    <>
-      <Box p={3} bg='primary'>
-        <Profile
-          user={ghAuth.user}
-          onLogin={login}
-          onLogout={logout}
-        />
+    <GhContext.Provider value={[site, setSite]}>
+      <Box p={3} bg='primary' color='white'>
+        <Flex>
+          <Profile
+            user={ghAuth.user}
+            onLogin={login}
+            onLogout={logout}
+          />
+          <Title />
+        </Flex>
       </Box>
       <Box p={1}>
         {error && (
@@ -47,6 +51,6 @@ export default () => {
         )}
         {loggedIn && <Viewer />}
       </Box>
-    </>
+    </GhContext.Provider>
   )
 }

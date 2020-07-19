@@ -1,5 +1,5 @@
 import React from "react"
-import { Avatar, Flex } from "theme-ui"
+import { Avatar } from "theme-ui"
 import { AiOutlineGithub } from "react-icons/ai"
 import { Button } from '../common'
 
@@ -18,13 +18,11 @@ export default ({
   }
 
   return (
-    <Flex>
-      <Button onClick={onLogout} link>
-        <Avatar
-          title={user.displayName}
-          src={user.photoURL}
-        />
-      </Button>
-    </Flex>
+    <Button onClick={onLogout} link>
+      <Avatar
+        title={user.displayName}
+        src={user.photoURL}
+      />
+    </Button>
   )
 }

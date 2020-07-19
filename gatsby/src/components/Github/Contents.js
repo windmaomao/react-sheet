@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useContext } from "react"
 import { Spinner, Text, Heading, Box } from "theme-ui"
 import {
   AiOutlineFolderOpen,
   AiOutlineFileText,
   AiOutlineGithub
 } from "react-icons/ai"
+import GhContext from './GhContext'
 import { ghAuth } from '../../utils'
 
 const isDir = item => item.type === 'dir'
@@ -12,6 +13,7 @@ const isDir = item => item.type === 'dir'
 export default ({ repo, onUrl }) => {
   if (!repo) return null
 
+  const [site, setSite] = useContext(GhContext)
   const [contents, setContents] = useState([])
   const [loading, setLoading] = useState(false)
   const [path, setPath] = useState('')
@@ -25,15 +27,15 @@ export default ({ repo, onUrl }) => {
       try {
         setLoading(true)
         const res = await ghAuth.fetch(`/repos/${repo}/contents/${path}`)
-        // console.log(res)
         setContents(res)
+        setSite({ ...site, title: repo })
       }
       finally {
         setLoading(false)
       }
     }
     fetch()
-  }, [setContents, repo, path])
+  }, [setContents, repo, path, site, setSite])
 
   const onFile = item => () => {
     if (isDir(item)) {
