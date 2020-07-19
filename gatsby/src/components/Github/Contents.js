@@ -19,14 +19,14 @@ export default ({ repo, onUrl }) => {
   const [path, setPath] = useState('')
 
   useEffect(() => {
-    setPath('')
+    setPath(`${repo}/contents/`)
   }, [repo])
 
   useEffect(() => {
     async function fetch() {
       try {
         setLoading(true)
-        const res = await ghAuth.fetch(`/repos/${repo}/contents/${path}`)
+        const res = await ghAuth.fetch(`/repos/${path}`)
         setContents(res)
         setSite({ ...site, title: repo })
       }
@@ -36,11 +36,11 @@ export default ({ repo, onUrl }) => {
     }
     fetch()
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [repo, path])
+  }, [path])
 
   const onFile = item => () => {
     if (isDir(item)) {
-      setPath(item.path)
+      setPath(`${repo}/contents/${item.path}`)
     } else {
       onUrl(item.download_url)
     }
