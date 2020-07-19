@@ -34,7 +34,10 @@ export default () => {
   return (
     <GhContext.Provider value={[site, setSite]}>
       <Box p={3} bg='primary' color='white'>
-        <Flex>
+        <Flex sx={{
+          justifyContent: 'space-between',
+          alignItems: 'center'
+        }}>
           <Profile
             user={ghAuth.user}
             onLogin={login}
