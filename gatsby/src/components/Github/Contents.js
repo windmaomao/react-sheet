@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react"
-import { Spinner, Text, Heading, Box } from "theme-ui"
+import { Spinner, Text, Box } from "theme-ui"
 import {
   AiOutlineFolderOpen,
   AiOutlineFileText,
@@ -35,7 +35,8 @@ export default ({ repo, onUrl }) => {
       }
     }
     fetch()
-  }, [setContents, repo, path, site, setSite])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [repo, path])
 
   const onFile = item => () => {
     if (isDir(item)) {
@@ -57,9 +58,11 @@ export default ({ repo, onUrl }) => {
       p={1}
       bg='#fafafa'
     >
-      <Heading as='h4'>
+      <Text
+        sx={{ fontSize: 2 }}
+      >
         <AiOutlineGithub /><br />{repoParts[1]}
-      </Heading>
+      </Text>
       <br />
       {contents.map(item => (
         <div key={item.name} title={item.type}>
