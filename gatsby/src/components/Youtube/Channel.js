@@ -8,10 +8,16 @@ export default ({ title, logo, desc }) => {
         flexDirection="Column"
         sx={{ alignItems: 'center' }}
       >
-        <Avatar src={logo} />
+        <Avatar src={logo} />&nbsp;
         <Heading>{title}</Heading>
       </Flex>
-      <Box p={1}>
+      <Box
+        sx={{
+          padding: '1rem 0',
+          fontSize: '0.9rem',
+          lineHeight: '1.2rem',
+        }}
+      >
         {desc}
       </Box>
     </Box>

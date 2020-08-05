@@ -26,7 +26,11 @@ export default ({ api, onSelect }) => {
           title={sub.snippet.title}
           src={sub.snippet.thumbnails.default.url}
           onClick={onClick(sub)}
-          sx={{ cursor: 'pointer' }}
+          sx={{
+            cursor: 'pointer',
+            width: '1.5rem',
+            margin: '0.2rem'
+          }}
         />
       ))}
     </Flex>

@@ -3,7 +3,7 @@
 ## develop
 ```
   rm -rf .cache
-  gatsby develop
+  gatsby develop -p 4000
 ```
 
 ## build
