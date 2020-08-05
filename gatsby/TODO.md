@@ -3,12 +3,16 @@
 - support own theme
 - support rss
 - add site favicon (manifest plugin doesn't work)
-- display page title/repo
+
+## 08/04
+
+- add youtube connect
 
 ## 07/17
 
-- [bug] can't switch to repo root
 - [bug] go back to parent folder
+- ~~display page title/repo~~
+- ~~[bug] can't switch to repo root~~
 - ~~render md~~
 - ~~add spinner~~
 

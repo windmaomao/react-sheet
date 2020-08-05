@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { Text } from "theme-ui"
+import { Text, Container } from "theme-ui"
 import { AiOutlineFileText } from "react-icons/ai"
 import ReactMarkdown from 'react-markdown'
 import { ghAuth } from '../../utils'
@@ -49,7 +49,11 @@ export default ({ url }) => {
       <Text sx={{ fontSize: 1 }} p={1}>
         <AiOutlineFileText />&nbsp;{urlParts.slice(-1)[0]}
       </Text>
-      {content && <FileRender {...content} />}
+      {content && (
+        <Container p={3}>
+          <FileRender {...content} />
+        </Container>
+      )}
       {loading && 'loading ...'}
     </div>
   )
