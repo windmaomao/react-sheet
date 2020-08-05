@@ -1,2 +1,2 @@
 export { default as ghAuth } from './ghAuth'
-export { default as createAuth } from './createAuth'
+export { default as createApi } from './createApi'

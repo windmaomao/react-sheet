@@ -1,9 +1,9 @@
 import React, { useState } from "react"
 import { Box, Flex, Alert, Close } from "theme-ui"
-import { createAuth } from '../../utils'
+import { createApi } from '../../utils'
 import Profile from './Profile'
 
-const auth = createAuth('google')
+const api = createApi('google')
 const scope = 'https://www.googleapis.com/auth/youtube'
 
 export default () => {
@@ -12,7 +12,7 @@ export default () => {
 
   const login = async () => {
     try {
-      await auth.login(scope)
+      await api.login(scope)
       setLoggedIn(true)
     } catch (error) {
       setError(error.message)
@@ -21,7 +21,7 @@ export default () => {
 
   const logout = async () => {
     try {
-      await auth.logout()
+      await api.logout()
       setLoggedIn(false)
     } catch (error) {
       setError(error.message)
@@ -36,7 +36,7 @@ export default () => {
           alignItems: 'center'
         }}>
           <Profile
-            user={auth.user}
+            user={api.user}
             onLogin={login}
             onLogout={logout}
           />
