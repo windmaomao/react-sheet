@@ -11,14 +11,18 @@ class OAuthApi {
     this.auth = auth
     this.name = name
     this.provider = null
+    this.domain = ''
     this.user = null
     this.token = null
 
     switch (name) {
       case 'google':
         this.provider = new this.auth.GoogleAuthProvider()
+        this.domain = 'https://www.googleapis.com/youtube/v3'
+        break
       case 'github':
         this.provider = new this.auth.GithubAuthProvider()
+        break
       default:
     }
   }
@@ -31,6 +35,18 @@ class OAuthApi {
         this.user = res.user
         this.token = res.credential.accessToken
         return this
+      })
+  }
+
+  fetch(api) {
+    const headers = {
+      "Content-Type": `application/json`,
+      "Authorization": `Bearer ${this.token}`
+    }
+    return fetch(`${this.domain}${api}`, { headers })
+      .then(res => {
+        if (res.ok) return res.json()
+        return null
       })
   }
 }
