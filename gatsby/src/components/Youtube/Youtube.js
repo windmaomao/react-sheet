@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { Box, Flex, Alert, Close } from "theme-ui"
 import { createApi } from '../../utils'
 import Profile from './Profile'
+import Viewer from './Viewer'
 
 const api = createApi('google')
 const scope = 'https://www.googleapis.com/auth/youtube'
@@ -48,6 +49,7 @@ export default () => {
             {error} <Close ml='auto' mr={-2} />
           </Alert>
         )}
+        {loggedIn && (<Viewer api={api} />)}
       </Box>
     </div>
   )
