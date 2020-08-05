@@ -5,7 +5,6 @@ import Profile from './Profile'
 
 const auth = createAuth('google')
 const scope = 'https://www.googleapis.com/auth/youtube'
-auth.init()
 
 export default () => {
   const [loggedIn, setLoggedIn] = useState(false)
