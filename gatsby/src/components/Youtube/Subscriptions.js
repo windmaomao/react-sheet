@@ -7,7 +7,7 @@ export default ({ api, onSelect }) => {
   useEffect(() => {
     async function fetch() {
       const res = await api.fetch(
-        `/subscriptions?mine=true&part=snippet&maxResults=50`
+        `/subscriptions?mine=true&part=snippet&maxResults=5`
       )
       if (res) setSubs(res.items)
     }
