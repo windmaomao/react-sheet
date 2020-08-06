@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import { Divider } from "theme-ui"
 import Subscriptions from './Subscriptions'
 import Channel from './Channel'
 
@@ -16,7 +15,6 @@ export default ({ api }) => {
         api={api}
         onSelect={onSelect}
       />
-      <Divider />
       {channel && (
         <Channel
           title={channel.title}

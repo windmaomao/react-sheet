@@ -21,11 +21,16 @@ export default ({
   return (
     <Flex
       flexDirection="row"
+      sx={{
+        backgroundColor: 'floralwhite',
+        justifyContent: 'space-around',
+      }}
     >
       <Box
         sx={{
-          flex: '0 0 250px',
-          fontSize: '0.9rem'
+          width: '200px',
+          fontSize: '0.9rem',
+          padding: '1rem'
         }}
       >
         <Avatar src={logo} />
@@ -40,10 +45,16 @@ export default ({
         </Text>
       </Box>
       {channel && (
-        <Playlist
-          api={api}
-          playlistId={channel.contentDetails.relatedPlaylists.uploads}
-        />
+        <Box
+          sx={{
+            flex: '0 0 500px',
+          }}
+        >
+          <Playlist
+            api={api}
+            playlistId={channel.contentDetails.relatedPlaylists.uploads}
+          />
+      </Box>
       )}
     </Flex>
   )

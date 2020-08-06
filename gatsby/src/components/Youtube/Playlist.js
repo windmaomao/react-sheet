@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react"
-import { Box, Heading, Text, Embed } from "theme-ui"
+import { Box, Text, Embed } from "theme-ui"
+
+const formatDate = str => {
+  const d = new Date(str)
+  return d.toLocaleDateString()
+}
 
 export default ({ api, playlistId }) => {
   if (!playlistId) return null
@@ -23,8 +28,10 @@ export default ({ api, playlistId }) => {
           key={v.id}
           sx={{ marginBottom: '2rem' }}
         >
-          <Heading as='h5'>{v.snippet.publishedAt}</Heading>
-          <Text>{v.snippet.title}</Text>
+          <small>{formatDate(v.snippet.publishedAt)}</small>
+          <Text sx={{ margin: '0.5rem 0' }}>
+            {v.snippet.title}
+          </Text>
           <Embed src={`https://www.youtube.com/embed/${v.snippet.resourceId.videoId}`} />
         </Box>
       ))}

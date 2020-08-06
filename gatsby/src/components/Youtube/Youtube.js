@@ -43,7 +43,7 @@ export default () => {
           />
         </Flex>
       </Box>
-      <Box p={1}>
+      <Box>
         {error && (
           <Alert>
             {error} <Close ml='auto' mr={-2} />

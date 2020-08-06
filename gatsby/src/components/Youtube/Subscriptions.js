@@ -7,7 +7,7 @@ export default ({ api, onSelect }) => {
   useEffect(() => {
     async function fetch() {
       const res = await api.fetch(
-        `/subscriptions?mine=true&part=snippet&maxResults=5`
+        `/subscriptions?mine=true&part=snippet&maxResults=50`
       )
       if (res) setSubs(res.items)
     }
@@ -18,7 +18,9 @@ export default ({ api, onSelect }) => {
 
   return (
     <Flex sx={{
-      flexWrap: "wrap"
+      flexWrap: "wrap",
+      padding: "0.5rem 1rem",
+      backgroundColor: "#66339917"
     }}>
       {subs.map(sub => (
         <Avatar
