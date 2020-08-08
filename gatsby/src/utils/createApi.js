@@ -38,16 +38,28 @@ class OAuthApi {
       })
   }
 
+  token(force) {
+    return this.user.getIdToken(force)
+      .then(t => {
+        if (t !== this.token) {
+          this.token = t
+        }
+      })
+  }
+
   fetch(api) {
     const headers = {
       "Content-Type": `application/json`,
       "Authorization": `Bearer ${this.token}`
     }
-    return fetch(`${this.domain}${api}`, { headers })
+
+    const callApi = () => fetch(`${this.domain}${api}`, { headers })
       .then(res => {
         if (res.ok) return res.json()
         return null
       })
+
+    return token().then(callApi)
   }
 }
 

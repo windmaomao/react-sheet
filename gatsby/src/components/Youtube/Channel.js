@@ -23,14 +23,16 @@ export default ({
       flexDirection="row"
       sx={{
         backgroundColor: 'floralwhite',
-        justifyContent: 'space-around',
+        justifyContent: 'space-between',
+        flexWrap: 'wrap'
       }}
     >
       <Box
         sx={{
-          width: '200px',
+          flex: '0 1 250px',
           fontSize: '0.9rem',
-          padding: '1rem'
+          padding: '2rem',
+          backgroundColor: 'gold'
         }}
       >
         <Avatar src={logo} />
@@ -38,7 +40,8 @@ export default ({
         <Text
           sx={{
             padding: '1rem 0',
-            fontSize: '0.8rem'
+            fontSize: '0.8rem',
+            wordBreak: 'break-all'
           }}
         >
           {desc}
@@ -47,7 +50,8 @@ export default ({
       {channel && (
         <Box
           sx={{
-            flex: '0 0 500px',
+            flex: '1 1 250px',
+            padding: '1vw 5vw'
           }}
         >
           <Playlist

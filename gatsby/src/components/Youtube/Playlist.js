@@ -22,11 +22,13 @@ export default ({ api, playlistId }) => {
   }, [setVideos, api, playlistId])
 
   return (
-    <Box p={2}>
+    <Box>
       {videos.map(v => (
         <Box
           key={v.id}
-          sx={{ marginBottom: '2rem' }}
+          sx={{
+            margin: '1rem 0',
+          }}
         >
           <small>{formatDate(v.snippet.publishedAt)}</small>
           <Text sx={{ margin: '0.5rem 0' }}>
