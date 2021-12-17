@@ -1,26 +1,46 @@
 const randomInt = x => Math.floor(Math.random() * x)
 
+const plus = (a, b) => ({ 
+  first: a, second: b, answer: a + b, operator: '+'
+})
+const minus = (a, b) => {
+  if (a < b) {
+    const tmp = a
+    a = b
+    b = tmp
+  }
+  return { first: a, second: b, answer: a - b, operator: '-' }
+}
+const multiply = (a, b) => ({
+  first: a, second: b, answer: a * b, operator: 'x'
+})
+
 const arithmeticGen = ({ max, operator }) => {
   return () => {
-    const nums = [randomInt(max), randomInt(max)]
-    let answer, tmp
-    let first = nums[0]
-    let second = nums[1]
+    let a = randomInt(max)
+    let b = randomInt(max)
+    let res
     switch (operator) {
-      case '-':
-        if (first < second) {
-          tmp = first; first = second; second = tmp
-        }
-        answer = first - second
+      case '+-':
+        if (randomInt(2)) {
+          res = plus(a, b)
+        } else {
+          res = minus(a, b)
+        }         
         break
       case 'x':
-        answer = first * second
+        res = multiply(a, b)
         break
+      case '-':
+        res = minus(a, b)
+        break
+      case '+':
       default:
-        answer = first + second
+        res = plus(a, b)
         break
     }
-    return { first, second, answer, operator }
+
+    return res
   }
 }
 
