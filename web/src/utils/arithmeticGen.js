@@ -1,7 +1,7 @@
 const randomInt = x => Math.floor(Math.random() * x)
 
 const arithmeticGen = ({ max, operator }) => {
-  const gen = () => {
+  return () => {
     const nums = [randomInt(max), randomInt(max)]
     let answer, tmp
     let first = nums[0]
@@ -22,7 +22,6 @@ const arithmeticGen = ({ max, operator }) => {
     }
     return { first, second, answer, operator }
   }
-  return { gen }
 }
 
 export default arithmeticGen

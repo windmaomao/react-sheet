@@ -3,11 +3,12 @@ import { sheetCreator, arithmeticGen } from '../utils'
 import SelectorStyle from './SelectorStyle'
 
 const gens = [
-  { label: '+', gen: arithmeticGen({ max: 12, operator: '+' }).gen },
-  { label: '-', gen: arithmeticGen({ max: 12, operator: '-' }).gen },
-  { label: '+', gen: arithmeticGen({ max: 20, operator: '+' }).gen },
-  { label: '-', gen: arithmeticGen({ max: 20, operator: '-' }).gen },
-  // { label: '*', gen: arithmeticGen({ max: 12, operator: 'x' }).gen }
+  { label: '+', gen: arithmeticGen({ max: 12, operator: '+' }) },
+  { label: '-', gen: arithmeticGen({ max: 12, operator: '-' }) },
+  { label: '+', gen: arithmeticGen({ max: 20, operator: '+' }) },
+  { label: '-', gen: arithmeticGen({ max: 20, operator: '-' }) },
+  { label: '2-', gen: arithmeticGen({ max: 20, operator: '-' }) }
+  // { label: '*', gen: arithmeticGen({ max: 12, operator: 'x' }) }
 ]
 
 const Selector = ({ onSelect }) => {
