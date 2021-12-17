@@ -1,11 +1,8 @@
 import React, { useRef, useEffect } from 'react'
 import PlusStyle from './PlusStyle'
 
-const keysOnly = [
-  8,  // backspace
-  9,  // tab
-  37, // left arrow
-  39, // right arrow
+const disabledKeys = [
+  32, // spacebar
 ]
 
 /**
@@ -33,12 +30,12 @@ const Plus = ({
   }, [active])
 
   const onKeyDown = e => {
-    console.log(e.keyCode)
-    if (e.keyCode === 13 || e.keyCode === 32) {
+    if (e.keyCode === 13) {
       onAnswer(e.target.value)
+      return
     }
     if (e.keyCode >= 48 && e.keyCode <= 57) return
-    if (keysOnly.indexOf(e.keyCode) < 0) {
+    if (disabledKeys.indexOf(e.keyCode) >= 0) {
       e.preventDefault()
     }
   }
