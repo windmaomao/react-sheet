@@ -22,6 +22,11 @@ const Sheet = ({
     }
     return false
   }
+  const onPrevNext = delta => {
+    let i = activeIndex + delta
+    if (i < 0) i = 0
+    setActiveIndex(i)
+  }
 
   return (
     <SheetStyle>
@@ -37,6 +42,7 @@ const Sheet = ({
           answer={q.answer}
           onAnswer={onQuestionAnswer(i)}
           error={isQuestionError(i)}
+          onPrevNext={onPrevNext}
         />
       ))}
     </SheetStyle>

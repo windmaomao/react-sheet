@@ -16,7 +16,7 @@ const disabledKeys = [
  */
 const Plus = ({ 
   i, onAnswer, first, second, operator,
-  active, error, onFocus
+  active, error, onFocus, onPrevNext
 }) => {
   const inputRef = useRef(null)
   useEffect(() => { 
@@ -35,6 +35,15 @@ const Plus = ({
       return
     }
     if (e.keyCode >= 48 && e.keyCode <= 57) return
+    if (e.keyCode == 37) {
+      onPrevNext(-1)
+      return
+    }
+    if (e.keyCode == 39) {
+      onPrevNext(1)
+      return
+    }
+
     if (disabledKeys.indexOf(e.keyCode) >= 0) {
       e.preventDefault()
     }
