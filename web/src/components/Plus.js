@@ -35,11 +35,11 @@ const Plus = ({
       return
     }
     if (e.keyCode >= 48 && e.keyCode <= 57) return
-    if (e.keyCode == 37) {
+    if (e.keyCode === 37) {
       onPrevNext(-1)
       return
     }
-    if (e.keyCode == 39) {
+    if (e.keyCode === 39) {
       onPrevNext(1)
       return
     }

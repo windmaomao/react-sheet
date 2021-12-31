@@ -1,4 +1,7 @@
-const randomInt = x => Math.floor(Math.random() * x)
+const { floor, random } = Math
+
+const randomInt = (h, l = 0) => 
+  floor(random() * (h-l+1)) + l
 
 const plus = (a, b) => ({ 
   first: a, second: b, answer: a + b, operator: '+'
@@ -15,10 +18,11 @@ const multiply = (a, b) => ({
   first: a, second: b, answer: a * b, operator: 'x'
 })
 
-const arithmeticGen = ({ max, operator }) => {
+const arithmeticGen = ({ min, max, operator }) => {
+  console.log(min)
   return () => {
-    let a = randomInt(max)
-    let b = randomInt(max)
+    let a = randomInt(max, min)
+    let b = randomInt(max, min)
     let res
     switch (operator) {
       case '+-':
