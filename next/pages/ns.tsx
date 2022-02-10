@@ -2,12 +2,23 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import NsSheet from '../components/NsSheet'
 import styles from '../components/NsSheet.module.css'
+import gen from '../services/nsGen'
+import { useState } from 'react'
 
-const NsQuestion = ({ chars }) => {
+const NsQuestion = () => {
+  const [q] = useState(gen())
+  const charStyle = (q, i) => 
+    q.highlights.indexOf(i) >= 0 ? styles.charHighlight : ''
+
   return (
-    <div className={styles.cell}>
-      {chars.map(c => (
-        <span>{c}</span>
+    <div className={styles.question}>
+      {q.word.split('').map((c, i) => (
+        <span 
+          key={`${i}`}
+          className={charStyle(q, i)}
+        >
+          {c}
+        </span>
       ))}
     </div> 
   )
@@ -30,7 +41,7 @@ const NonSensePage: NextPage = () => {
             className={styles.article}
             key={`${c}`}
           >
-            <NsQuestion chars={['c','i','v']} />
+            <NsQuestion />
           </article>
         ))}
       </main>
