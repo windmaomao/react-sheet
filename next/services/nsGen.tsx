@@ -1,31 +1,29 @@
-const random = (h) => 
-  Math.floor(Math.random() * h)
+import {randPick, randMinMax} from './random'
 
 const Consonants = 'bcdfghjklmnpqrstvwxyz'
 const Vowels = 'aeiou'
 
-const randCons = () => {
-  const i = random(Consonants.length)
-  return Consonants[i]
-}
+const randCons = () => randPick(Consonants)
 
-const randVowel = () => {
-  const i = random(Vowels.length)
-  return Vowels[i]
-}
+const randVowel = () => randPick(Vowels) 
 
-const randWord = () => {
-  let word = randCons() + randVowel() + randCons()
-  if (random(2)) word += 'e'
+const randWord = (min, max) => {
+  let word = ""
+  let highlights = []
 
-  return {
-    word,
-    highlights: [1]
+  const len = randMinMax(min, max)
+  let v = false
+  for (let i = 0; i < len; i++) {
+    word += !v ? randCons() : randVowel()
+    v && highlights.push(i)
+    v = !v
   }
+
+  return { word, highlights }
 }
 
 export default function nsGen() {
   return () => {
-    return randWord()
+    return randWord(3, 3)
   }
 }

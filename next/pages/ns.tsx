@@ -14,7 +14,7 @@ const NsQuestion = () => {
     <div className={styles.question}>
       {q.word.split('').map((c, i) => (
         <span 
-          key={`${i}`}
+          key={`${q}-${i}`}
           className={charStyle(q, i)}
         >
           {c}
