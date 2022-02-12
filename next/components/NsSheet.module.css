@@ -1,45 +1,60 @@
 .container {
   background: #1a2b34;
-  color: white;
+}
+
+.h1 {
+  margin: 0;
+  padding: .5em;
+  color: gray;
+  text-align: right;
+  font-size: 1em;
 }
 
 .main {
-  max-width: 800px;
+  max-width: 500px;
   min-height: 100vh;
   margin: 0 auto;
-  padding: 4rem 0;
+  padding: 0;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .article {
-  flex: 1 0;
-  min-width: 120px;
-  border: 1px dashed gray;
-  margin: 0.5rem;
-  height: 100px;
-  border-radius: 5%;
+  width: 100%;
 }
 
-.question {
-  font-family: Times New Room;
-  font-size: 3rem;
+.articleNormal {
+  composes: article;
   color: gray;
+}
+
+.articleTouched {
+  composes: article;
+  background: black;
+  color: gray;
+}
+
+.articleActive {
+  composes: article;
+  background: black;
+  color: white;
+}
+
+.word {
+  font-size: 3rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   height: 90%;
+  cursor: pointer;
+  line-height: 4.5rem;
 }
 
-.charHighlight {
-  font-style: italic;
-}
-
-@media (max-width: 600px) {
-  .main {
-    flex-direction: column;
-  }
+.index {
+  float: left;
+  color: #333;
+  font-size: .8em;
 }

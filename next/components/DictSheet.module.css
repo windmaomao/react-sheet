@@ -1,10 +1,9 @@
 .container {
   background: #1a2b34;
-  color: white;
 }
 
 .main {
-  max-width: 800px;
+  max-width: 500px;
   min-height: 100vh;
   margin: 0 auto;
   padding: 4rem 0;
@@ -15,18 +14,46 @@
 }
 
 .article {
-  min-width: 80%;
-  border: 1px dashed gray;
-  margin: 0.5rem;
-  height: 100px;
+  width: 100%;
+}
+
+.articleNormal {
+  composes: article;
+  color: gray;
+}
+
+.articleTouched {
+  composes: article;
+  background: black;
+  color: gray;
+}
+
+.articleActive {
+  composes: article;
+  background: black;
+  color: white;
 }
 
 .word {
   font-size: 3rem;
-  color: gray;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   height: 90%;
+  cursor: pointer;
+  line-height: 4.5rem;
 }
+
+.word {
+  font-size: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  cursor: pointer;
+  line-height: 4.5rem;
+}
+
+
