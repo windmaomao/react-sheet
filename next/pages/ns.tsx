@@ -1,23 +1,23 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import NsSheet from '../components/NsSheet'
 import styles from '../components/NsSheet.module.css'
 import nsWordGen from '../services/nsWordGen'
 import { useState, useEffect } from 'react'
 
 const gen = nsWordGen()
 
-const NsWord = ({ id, active, onActive }) => {
+const NsWord = ({ id }) => {
   const [w, setW] = useState()
   useEffect(() => { setW(gen()) }, [])
+
+  const [active, setActive] = useState(false)
   const [touched, setTouched] = useState(false)
   useEffect(() => { 
     if (!touched && active) setTouched(true)
   }, [active])
-  const onClick = () => {
-    setTouched(true)
-    onActive()
-  }
+  const onClick = () => { setTouched(true) }
+  const onBlur = () => { setActive(false) }
+  const onFocus = () => { setActive(true) }
 
   if (!w) return null
 
@@ -29,7 +29,9 @@ const NsWord = ({ id, active, onActive }) => {
 
   return (
     <div className={wrapperStyle}
-         key={'a'}
+         tabIndex="0"
+         onBlur={onBlur}
+         onFocus={onFocus}
     >
       <div className={styles.index}>{id+1}</div>
       <div className={styles.word}
@@ -45,20 +47,22 @@ const NsWord = ({ id, active, onActive }) => {
   )
 }
 
+function focusNext() {
+  var query = '[tabindex]';
+  if (document.activeElement) {
+    var elements = [...document.querySelectorAll(query)]
+    var index = elements.indexOf(document.activeElement);
+    index++
+    if (index == elements.length) index = 0
+    elements[index].focus()
+  }
+}
+
 const NsWordSheet = () => {
-  const items = new Array(50).fill(0).map((_,i) => i)
-  const [current, setCurrent] = useState(0)
-  const isActive = i => i === current
-  const onActive = i => () => { setCurrent(i) }
+  const items = new Array(50).fill(0)
   useEffect(() => {
     window.addEventListener('keypress', e => {
-      if (e.charCode == 13) {
-        setCurrent(i => {
-          let c = i + 1
-          if (c == items.length) c = 0
-          return c 
-        })
-     }
+      if (e.charCode == 13) { focusNext() }
     })
   }, [])
 
@@ -67,11 +71,7 @@ const NsWordSheet = () => {
       <h1 className={styles.h1}>Nonsense Words</h1>
       <main className={styles.main}>
         {items.map((_, i) => (
-          <NsWord key={`word-${i}`} 
-                  id={i}
-                  active={isActive(i)}
-                  onActive={onActive(i)}
-          />
+          <NsWord key={`word-${i}`} id={i} />
         ))}
       </main>
     </div>
