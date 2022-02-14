@@ -1,0 +1,6 @@
+.button {
+  float: left;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}

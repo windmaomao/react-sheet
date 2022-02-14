@@ -15,6 +15,14 @@ a {
   box-sizing: border-box;
 }
 
+:root {
+  --theme-bg-color: white;
+  --theme-text-color: black;
+  --theme-text-inactive-color: lightgray;
+}
+
 html[data-theme="dark"] {
-  background: black;
+  --theme-bg-color: black;
+  --theme-text-color: white;
+  --theme-text-inactive-color: gray;
 }
