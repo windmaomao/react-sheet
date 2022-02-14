@@ -53,7 +53,7 @@ const items = new Array(100).fill(0).map((_,i) => i)
 const DictSheet = () => {
   useEffect(() => {
     window.addEventListener('keypress', (e: KeyboardEvent) => {
-      if (e.charCode == 13) { focusNextElement() }
+      if (e.key == 'Enter') { focusNextElement() }
     })
   }, [])
 
