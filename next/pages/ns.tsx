@@ -1,16 +1,17 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import NsWordSheet from 'components/NsWordSheet'
 import PageHead from 'components/PageHead'
+import PageSheet from 'components/PageSheet'
+import NsWord from 'components/NsWord'
 
 const title = 'NonSense Word'
-
 const NonSensePage: NextPage = () => {
   return (
     <div>
-      <Head> <title>NonSense Word</title> </Head>
+      <Head> <title>{title}</title> </Head>
       <PageHead title={title} />
-      <NsWordSheet />
+      <PageSheet count={50}
+                 Question={NsWord} />
     </div>
   )
 }

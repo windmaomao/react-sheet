@@ -1,4 +1,4 @@
-import styles from 'components/NsWordSheet.module.css'
+import styles from 'components/NsWord.module.css'
 import nsWordGen, { NsWord } from 'services/nsWordGen'
 import React, { useState, useEffect } from 'react'
 
@@ -58,17 +58,4 @@ const NsWord = ({ id }: NsWordProps) => {
   )
 }
 
-const items = new Array(50).fill(0)
-const NsWordSheet = () => {
-  return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-        {items.map((_, i) => (
-          <NsWord key={`word-${i}`} id={i} />
-        ))}
-      </main>
-    </div>
-  )
-}
-
-export default NsWordSheet
+export default NsWord
