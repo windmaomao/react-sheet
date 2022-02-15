@@ -67,7 +67,6 @@ const DictSheet = () => {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <h1 className={styles.h1}>Dict GRE</h1>
         {items.map((_, i) => (
           <DictWord key={`dict-${i}`} id={i} />
         ))}

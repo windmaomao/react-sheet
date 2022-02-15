@@ -1,6 +1,7 @@
 .container {
   background: var(--theme-bg-color);
   color: var(--theme-text-color);
+  margin-top: 2em;
 }
 
 .main {
@@ -11,13 +12,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.h1 {
-  margin: 0;
-  margin-left: auto;
-  padding: .3em;
-  font-size: 20px;
 }
 
 .article {

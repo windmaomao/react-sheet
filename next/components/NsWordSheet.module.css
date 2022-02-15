@@ -1,14 +1,7 @@
 .container {
   background: var(--theme-bg-color);
   color: var(--theme-text-color);
-}
-
-.h1 {
-  margin: 0;
-  padding: .5em;
-  color: gray;
-  text-align: right;
-  font-size: 1em;
+  margin-top: 2em;
 }
 
 .main {

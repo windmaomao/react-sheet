@@ -1,5 +1,5 @@
-import styles from 'components/NsSheet.module.css'
-import nsWordGen, { NsWord } from '../services/nsWordGen'
+import styles from 'components/NsWordSheet.module.css'
+import nsWordGen, { NsWord } from 'services/nsWordGen'
 import React, { useState, useEffect } from 'react'
 
 const gen = nsWordGen()
@@ -62,7 +62,6 @@ const items = new Array(50).fill(0)
 const NsWordSheet = () => {
   return (
     <div className={styles.container}>
-      <h1 className={styles.h1}>Nonsense Words</h1>
       <main className={styles.main}>
         {items.map((_, i) => (
           <NsWord key={`word-${i}`} id={i} />
