@@ -1,4 +1,6 @@
-import {randPick, randMinMax} from './random'
+import {randPick} from './random'
+
+export type NsWord = string[]
 
 const Cons = [
   'b', 'c', 'd', 'f', 'g',
@@ -43,17 +45,14 @@ const ConsComb = [
   'ge', 'gi', 'gy',
 ]
 
-const randCon = () => randPick(Cons)
-const randVow = () => randPick(Vows) 
-
-const randParts = () => {
+const randParts = (): NsWord => {
   const rounds = 1
   let parts = []
   for (let i = 0; i < rounds; i++) {
     parts.push(randPick(Cons))
     parts.push(randPick(Vows))
   }
-  parts.push(randPick(Cons2))
+  // parts.push(randPick(Cons2))
   return parts
 }
 

@@ -1,5 +1,6 @@
 .container {
-  background: #1a2b34;
+  background: var(--theme-bg-color);
+  color: var(--theme-text-color);
 }
 
 .h1 {
@@ -23,23 +24,25 @@
 
 .article {
   width: 100%;
+  outline: none;
 }
 
 .articleNormal {
   composes: article;
-  color: gray;
+  color: var(--theme-text-inactive-color);
 }
 
 .articleTouched {
   composes: article;
-  background: black;
-  color: gray;
+  background: var(--theme-bg-color);
+  color: var(--theme-text-inactive-color);
 }
 
 .articleActive {
   composes: article;
-  background: black;
-  color: white;
+  background: var(--theme-bg-color);
+  color: var(--theme-text-color);
+  border: 1px solid var(--theme-border-color);
 }
 
 .word {
@@ -55,6 +58,5 @@
 
 .index {
   float: left;
-  color: #333;
   font-size: .8em;
 }
