@@ -22,6 +22,7 @@
 
 .article {
   width: 100%;
+  outline: none;
 }
 
 .articleNormal {
@@ -39,6 +40,7 @@
   composes: article;
   background: var(--theme-bg-color);
   color: var(--theme-text-color);
+  border: 1px solid var(--theme-border-color);
 }
 
 .word {

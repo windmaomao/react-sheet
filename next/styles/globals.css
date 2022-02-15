@@ -19,10 +19,12 @@ a {
   --theme-bg-color: white;
   --theme-text-color: black;
   --theme-text-inactive-color: lightgray;
+  --theme-border-color: black;
 }
 
 html[data-theme="dark"] {
   --theme-bg-color: black;
   --theme-text-color: white;
   --theme-text-inactive-color: gray;
+  --theme-border-color: white;
 }

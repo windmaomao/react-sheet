@@ -1,7 +1,6 @@
 import styles from 'components/DictSheet.module.css'
 import dictGen, { Dict } from 'services/dictGen'
-import { useState, useEffect } from 'react'
-import { focusNextElement } from './dom'
+import React, { useState, useEffect } from 'react'
 
 const gen = dictGen()
 
@@ -18,8 +17,21 @@ const DictWord = ({ id }: DictWordProps) => {
     if (!touched && active) setTouched(true)
   }, [active, touched])
   const onClick = () => { setTouched(true) }
-  const onBlur = () => { setActive(false) }
+  const onBlur = (e: React.FocusEvent) => { 
+    if (document.activeElement === e.target) return
+    setActive(false)
+  }
   const onFocus = () => { setActive(true) }
+  const onKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'ArrowRight') {
+      const el = e.currentTarget.nextElementSibling
+      if (el) (el as HTMLElement)?.focus()
+    }
+    if (e.key === 'ArrowLeft') {
+      const el = e.currentTarget.previousElementSibling
+      if (el) (el as HTMLElement)?.focus()
+    }
+  }
 
   if (!w) return null
 
@@ -36,6 +48,7 @@ const DictWord = ({ id }: DictWordProps) => {
          tabIndex={0}
          onBlur={onBlur}
          onFocus={onFocus}
+         onKeyDown={onKeyDown}
     >
       <div className={styles.word} onClick={onClick}>
         <div>{w.word}</div>
@@ -51,12 +64,6 @@ const DictWord = ({ id }: DictWordProps) => {
 
 const items = new Array(100).fill(0).map((_,i) => i)
 const DictSheet = () => {
-  useEffect(() => {
-    window.addEventListener('keypress', (e: KeyboardEvent) => {
-      if (e.key == 'Enter') { focusNextElement() }
-    })
-  }, [])
-
   return (
     <div className={styles.container}>
       <main className={styles.main}>
