@@ -1,12 +1,10 @@
-import styles from 'components/DictSheet.module.css'
 import dictGen, { Dict } from 'services/dictGen'
 import React, { useState, useEffect } from 'react'
+import styles from './DictWord.module.css'
 
 const gen = dictGen()
 
-type DictWordProps = {
-  id: number,
-}
+type DictWordProps = { id: number }
 const DictWord = ({ id }: DictWordProps) => {
   const [w, setW] = useState<Dict>()
   useEffect(() => { setW(gen()) }, [])
@@ -62,17 +60,4 @@ const DictWord = ({ id }: DictWordProps) => {
   )
 }
 
-const items = new Array(100).fill(0).map((_,i) => i)
-const DictSheet = () => {
-  return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-        {items.map((_, i) => (
-          <DictWord key={`dict-${i}`} id={i} />
-        ))}
-      </main>
-    </div>
-  )
-}
-
-export default DictSheet
+export default DictWord

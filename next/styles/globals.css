@@ -20,7 +20,7 @@ a {
   --theme-bg-invert-color: black;
   --theme-text-color: black;
   --theme-text-invert-color: white;
-  --theme-text-inactive-color: rgb(43, 42, 42);
+  --theme-text-inactive-color: lightgray;
   --theme-border-color: black;
 }
 
