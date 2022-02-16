@@ -1,4 +1,4 @@
-import { randPick } from './random'
+import {randPick, randShuffle} from './random'
 
 export type Dict = {
   word: string,
@@ -86,7 +86,7 @@ const FjList1: Dict[] = [
 }))
 
 export default function dictGen() {
-  const dicts = [...FjList1]
+  const dicts = randShuffle(FjList1)
   return (): Dict => {
     return randPick(dicts)
   }

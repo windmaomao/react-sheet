@@ -22,7 +22,7 @@ const NsWord = ({ id }: NsWordProps) => {
   }
   const onFocus = () => { setActive(true) }
   const onKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'ArrowRight') {
+    if (e.key === 'ArrowRight' || e.key === 'Enter') {
       const el = e.currentTarget.nextElementSibling
       if (el) (el as HTMLElement)?.focus()
     }
