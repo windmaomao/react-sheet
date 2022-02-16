@@ -12,3 +12,15 @@
   font-size: 1em;
   color: var(--theme-text-invert-color);
 }
+
+.navs {
+  display: flex;
+  justify-content: flex-end;
+  color: var(--theme-text-invert-color);
+}
+
+.nav {
+  margin: 0.05em .2em;
+  cursor: pointer;
+  font-size: .9em;
+}

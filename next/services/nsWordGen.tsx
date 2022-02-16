@@ -52,7 +52,7 @@ const randParts = (level = ''): NsWord => {
     parts.push(randPick(Cons))
     parts.push(randPick(Vows))
   }
-  if (level) parts.push(randPick(Cons2))
+  if (level == '1') parts.push(randPick(Cons2))
   return parts
 }
 
