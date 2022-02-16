@@ -87,7 +87,10 @@ const FjList1: Dict[] = [
 
 export default function dictGen() {
   const dicts = randShuffle(FjList1)
+  let i = -1
   return (): Dict => {
-    return randPick(dicts)
+    i++
+    if (i == dicts.length) i = 0
+    return dicts[i]
   }
 }

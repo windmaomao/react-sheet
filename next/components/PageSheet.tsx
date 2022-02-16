@@ -1,5 +1,6 @@
 import styles from './PageSheet.module.css'
 import {useState} from 'react'
+import PageCard from 'components/PageCard'
 
 type PageSheetProps = {
   count: number,
@@ -13,7 +14,9 @@ const PageSheet = ({ count, Question }: PageSheetProps) => {
     <div className={styles.container}>
       <main className={styles.main}>
         {items.map((_, i) => (
-          <Question key={`word-${i}`} id={i} />
+          <PageCard key={`word-${i}`} id={i}>
+            <Question />
+          </PageCard>
         ))}
       </main>
     </div>

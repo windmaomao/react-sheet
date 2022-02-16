@@ -1,26 +1,3 @@
-.article {
-  width: 100%;
-  outline: none;
-}
-
-.articleNormal {
-  composes: article;
-  color: var(--theme-text-inactive-color);
-}
-
-.articleTouched {
-  composes: article;
-  background: var(--theme-bg-color);
-  color: var(--theme-text-inactive-color);
-}
-
-.articleActive {
-  composes: article;
-  background: var(--theme-bg-color);
-  color: var(--theme-text-color);
-  border: 1px solid var(--theme-border-color);
-}
-
 .word {
   font-size: 3rem;
   display: flex;
