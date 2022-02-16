@@ -2,18 +2,16 @@ import React, { useState, useEffect } from 'react'
 import styles from './PageCard.module.css'
 
 type PageCardProps = { 
-  id: number,
   children: JSX.Element
 }
 
 export type CardProps = {
-  id: number,
   active: boolean,
   touched: boolean,
   touch: () => void,
 }
 
-const PageCard = ({ id, children }: PageCardProps) => {
+const PageCard = ({ children }: PageCardProps) => {
   const [active, setActive] = useState(false)
   const [touched, setTouched] = useState(false)
   useEffect(() => { 
@@ -44,7 +42,7 @@ const PageCard = ({ id, children }: PageCardProps) => {
     )
 
   const childrenProps: CardProps = {
-    id, active, touched, touch
+    active, touched, touch
   }
 
   return (

@@ -1,13 +1,13 @@
 import nsWordGen, {NsWord} from 'services/nsWordGen'
 import {useState, useEffect} from 'react'
 import styles from 'components/NsWord.module.css'
-import {CardProps} from 'components/PageCard'
+import {QuestionProps} from 'components/PageSheet'
 
 const gen = nsWordGen()
 
-const NsWord = ({ id, touch }: CardProps) => {
+const NsWord = ({ id, level, touch }: QuestionProps) => {
   const [w, setW] = useState<NsWord>()
-  useEffect(() => { setW(gen()) }, [])
+  useEffect(() => { setW(gen(level)) }, [level])
 
   if (!w) return null
 

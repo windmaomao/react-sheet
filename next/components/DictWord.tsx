@@ -1,11 +1,11 @@
 import dictGen, {Dict} from 'services/dictGen'
 import {useState, useEffect} from 'react'
 import styles from './DictWord.module.css'
-import {CardProps} from 'components/PageCard'
+import {QuestionProps} from 'components/PageSheet'
 
 const gen = dictGen()
 
-const DictWord = ({ active, touch }: CardProps) => {
+const DictWord = ({ active, touch }: QuestionProps) => {
   const [w, setW] = useState<Dict>()
   useEffect(() => { setW(gen()) }, [])
 

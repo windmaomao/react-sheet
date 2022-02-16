@@ -6,12 +6,14 @@ import NsWord from 'components/NsWord'
 
 const title = 'NonSense Word'
 const NonSensePage: NextPage = () => {
+  const level = 'default'
   return (
     <div>
       <Head> <title>{title}</title> </Head>
       <PageHead title={title} />
       <PageSheet count={50}
-                 Question={NsWord} />
+                 Question={NsWord}
+                 level={level} />
     </div>
   )
 }

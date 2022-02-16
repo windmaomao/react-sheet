@@ -45,14 +45,14 @@ const ConsComb = [
   'ge', 'gi', 'gy',
 ]
 
-const randParts = (): NsWord => {
+const randParts = (level = ''): NsWord => {
   const rounds = 1
   let parts = []
   for (let i = 0; i < rounds; i++) {
     parts.push(randPick(Cons))
     parts.push(randPick(Vows))
   }
-  // parts.push(randPick(Cons2))
+  if (level) parts.push(randPick(Cons2))
   return parts
 }
 
