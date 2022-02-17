@@ -1,5 +1,5 @@
 import styles from './PageSheet.module.css'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import PageCard, {CardProps} from 'components/PageCard'
 
 type PageSheetProps = {
@@ -17,6 +17,10 @@ const PageSheet = ({
   count, level, Question 
 }: PageSheetProps) => {
   const [items] = useState(new Array(count).fill(0))
+  useEffect(() => {
+    const tabs = document.querySelectorAll('[tabindex]')
+    if (tabs.length) (tabs[0] as HTMLElement).focus()
+  }, [level])
 
   return (
     <div className={styles.container}>

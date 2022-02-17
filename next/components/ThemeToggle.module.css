@@ -4,4 +4,5 @@
   background: transparent;
   border: none;
   color: var(--theme-text-color);
+  padding: .5em;
 }
