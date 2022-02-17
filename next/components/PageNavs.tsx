@@ -6,6 +6,7 @@ type PageNavsProps = {
   items?: string[],
   visit?: (item: string) => void
 }
+
 const PageNavs = ({ title, items, visit }: PageNavsProps) => {
   const onClick = (item: string) => () => { 
     visit && visit(item)

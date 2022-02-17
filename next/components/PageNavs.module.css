@@ -2,7 +2,8 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background: var(--theme-bg-invert-color);
+  background: var(--theme-border-color);
+  color: var(--theme-text-inactive-color);
 }
 
 .h1 {
@@ -10,13 +11,11 @@
   padding: .5em;
   text-align: right;
   font-size: 1em;
-  color: var(--theme-text-invert-color);
 }
 
 .navs {
   display: flex;
   justify-content: flex-end;
-  color: var(--theme-text-invert-color);
 }
 
 .nav {

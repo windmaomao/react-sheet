@@ -1,7 +1,7 @@
 .container {
   background: var(--theme-bg-color);
   color: var(--theme-text-color);
-  margin-top: 3em;
+  padding-top: 5.5em;
 }
 
 .main {
