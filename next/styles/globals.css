@@ -17,15 +17,15 @@ a {
 
 :root {
   --theme-bg-color: white;
-  --theme-bg-invert-color: black;
+  --theme-bg-inactive-color: #eee;
   --theme-text-color: black;
-  --theme-text-invert-color: white;
   --theme-text-inactive-color: lightgray;
   --theme-border-color: black;
 }
 
 html[data-theme="dark"] {
   --theme-bg-color: black;
+  --theme-bg-inactive-color: #222;
   --theme-text-color: white;
   --theme-text-inactive-color: gray;
   --theme-border-color: white;

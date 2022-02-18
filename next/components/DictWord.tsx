@@ -15,12 +15,7 @@ const DictWord = ({ active, touch }: QuestionProps) => {
     <div className={styles.word}
          onClick={touch}
     >
-      <div>{w.word}</div>
-      {active && (
-        <span className={styles.meaning}>
-          {w.meaning || ''}
-        </span>
-      )}
+      <div title={w.meaning}>{w.word}</div>
     </div> 
   )
 }

@@ -2,8 +2,8 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background: var(--theme-border-color);
-  color: var(--theme-text-inactive-color);
+  background: var(--theme-bg-inactive-color);
+  color: var(--theme-text-color);
 }
 
 .h1 {

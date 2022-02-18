@@ -1,12 +1,13 @@
 .word {
+  min-width: 240px;
   font-size: 3rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  height: 90%;
   cursor: pointer;
   line-height: 4.5rem;
+  margin: 0.1rem;
 }
 
 .index {

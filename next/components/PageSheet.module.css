@@ -1,15 +1,12 @@
 .container {
   background: var(--theme-bg-color);
   color: var(--theme-text-color);
-  padding-top: 5.5em;
+  padding: 5.5em;
 }
 
 .main {
-  max-width: 500px;
-  min-height: 100vh;
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
