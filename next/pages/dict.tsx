@@ -10,8 +10,10 @@ const DictPage: NextPage = () => {
     <div>
       <Head> <title>{title}</title> </Head>
       <PageNavs title={title} />
-      <PageSheet count={50}
-                 Question={DictWord} />
+      <PageSheet count={100}
+                 Question={DictWord}
+                 level=""
+      />
     </div>
   )
 }
