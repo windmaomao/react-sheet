@@ -26,8 +26,8 @@ const Dicts = [
   ['invariant'],
   ['hindsight'],
   ['reap'], 
-].map(([word]) => ({
-  word
+].map(([word, meaning]) => ({
+  word, meaning
 }))
 
 const FjList1: Dict[] = [
@@ -135,8 +135,9 @@ const FjList1: Dict[] = [
   word, meaning
 }))
 
-export default function dictGen() {
-  const dicts = randShuffle(FjList1)
+export default function dictGen(day: string) {
+  const List = day == '1' ? FjList1 : Dicts
+  const dicts = randShuffle(List)
   let i = -1
   return (): Dict => {
     i++

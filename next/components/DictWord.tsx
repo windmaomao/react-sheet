@@ -2,12 +2,16 @@ import dictGen, {Dict} from 'services/dictGen'
 import {useState, useEffect} from 'react'
 import styles from './DictWord.module.css'
 import {QuestionProps} from 'components/PageSheet'
-
-const gen = dictGen()
+import {useDictSettings} from 'components/useDictSettings'
 
 const DictWord = ({ active, touch }: QuestionProps) => {
+  const dict = useDictSettings()
   const [w, setW] = useState<Dict>()
-  useEffect(() => { setW(gen()) }, [])
+  useEffect(() => { 
+    const day = dict.day.get()
+    const gen = dictGen(day)
+    setW(gen()) 
+  }, [])
 
   if (!w) return null
 

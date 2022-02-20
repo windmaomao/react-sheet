@@ -2,13 +2,18 @@ import {motion} from 'framer-motion'
 import Modal from 'components/Modal'
 import {useState} from 'react'
 import styles from './DictSettings.module.css'
+import {useDictSettings} from 'components/useDictSettings'
 
 const DictSettings = ({}) => {
   const [on, setOn] = useState(false)
   const onModal = () => { setOn(!on) }
+  
+  const dict = useDictSettings()
+  
   const [day, setDay] = useState('1')
   const onDay = (d: string) => () => {
     setDay(d)
+    dict.day.set(d)
   }
 
   const dayStyles = (d: string) => day === d 
