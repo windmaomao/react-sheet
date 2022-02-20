@@ -15,6 +15,7 @@ const DictSettings = ({}) => {
     setDay(d)
     dict.day.set(d)
   }
+  const days = dict.days.get()
 
   const dayStyles = (d: string) => day === d 
     ? styles.dayActive
@@ -30,7 +31,7 @@ const DictSettings = ({}) => {
       />
       <Modal on={on} close={onModal}>
         <h1>GRE Words</h1>
-        {['1','2'].map(d => (
+        {days.map(d => (
           <motion.span key={d}
             onClick={onDay(d)}
             className={dayStyles(d)}

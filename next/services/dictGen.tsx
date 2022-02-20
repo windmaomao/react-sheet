@@ -135,8 +135,20 @@ const FjList1: Dict[] = [
   word, meaning
 }))
 
+const FjList2 = [
+  ['', '']
+].map(([word, meaning]) => ({
+  word, meaning
+}))
+
+const Lists: Record<string, Dict[]> = {
+  custom: Dicts,
+  day1: FjList1,
+  day2: FjList2
+}
+
 export default function dictGen(day: string) {
-  const List = day == '1' ? FjList1 : Dicts
+  const List = Lists[day]
   const dicts = randShuffle(List)
   let i = -1
   return (): Dict => {

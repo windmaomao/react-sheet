@@ -11,7 +11,7 @@ const DictWord = ({ active, touch }: QuestionProps) => {
     const day = dict.day.get()
     const gen = dictGen(day)
     setW(gen()) 
-  }, [])
+  }, [dict.day.get()])
 
   if (!w) return null
 

@@ -1,8 +1,8 @@
 import {createState, useState} from '@hookstate/core'
 
 const initDictSettings = createState({
-  days: ['1', '2'],
-  day: '1'
+  days: ['custom', 'day1', 'day2'],
+  day: 'day1'
 })
 
 export const useDictSettings = () => {
