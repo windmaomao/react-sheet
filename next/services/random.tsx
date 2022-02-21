@@ -8,7 +8,7 @@ function randPick<T>(arr: T[]): T {
 }
 
 function randShuffle<T>(arr: T[]): T[] {
-  return arr.sort(randSign)
+  return [...arr].sort(randSign)
 }
 
 export { 

@@ -25,7 +25,8 @@ const Dicts = [
   ['intractable'],
   ['invariant'],
   ['hindsight'],
-  ['reap'], 
+  ['reap'],
+  ['purport', '意味着'] 
 ].map(([word, meaning]) => ({
   word, meaning
 }))
