@@ -2,7 +2,7 @@ import {motion} from 'framer-motion'
 import Modal from 'components/Modal'
 import {useState} from 'react'
 import styles from './DictSettings.module.css'
-import {useDictSettings, setDictGen} from 'components/useDictSettings'
+import {useDictSettings} from 'components/useDictSettings'
 import dictGen from 'services/dictGen'
 
 const DictSettings = ({}) => {
@@ -14,7 +14,6 @@ const DictSettings = ({}) => {
   const [day, setDay] = useState('1')
   const onDay = (d: string) => () => {
     setDay(d)
-    // setDictGen(d)
     dict.day.set(d)
     dict.gen.set(dictGen(d))
   }
