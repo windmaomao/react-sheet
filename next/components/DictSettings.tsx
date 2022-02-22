@@ -2,26 +2,24 @@ import {motion} from 'framer-motion'
 import Modal from 'components/Modal'
 import {useState} from 'react'
 import styles from './DictSettings.module.css'
-import {useDictSettings} from 'components/useDictSettings'
-import dictGen from 'services/dictGen'
+import {useSelector, useDispatch} from 'states/useStore'
+import {changeDay} from 'states/dict'
 
 const DictSettings = ({}) => {
   const [on, setOn] = useState(false)
   const onModal = () => { setOn(!on) }
   
-  const dict = useDictSettings()
-  
-  const [day, setDay] = useState('1')
+  const day = useSelector(s => s.dict.day)
   const onDay = (d: string) => () => {
-    setDay(d)
-    dict.day.set(d)
-    dict.gen.set(dictGen(d))
+    dispatch(changeDay(d))
   }
-  const days = dict.days.get()
 
   const dayStyles = (d: string) => day === d 
     ? styles.dayActive
     : styles.day
+
+  const days = useSelector(s => s.dict.days)
+  const dispatch = useDispatch()
 
   return (
     <div>

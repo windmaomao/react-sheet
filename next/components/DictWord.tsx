@@ -2,15 +2,12 @@ import {Dict} from 'services/dictGen'
 import {useState, useEffect} from 'react'
 import styles from './DictWord.module.css'
 import {QuestionProps} from 'components/PageSheet'
-import {useDictSettings} from 'components/useDictSettings'
+import {useSelector} from 'states/useStore'
 
 const DictWord = ({ active, touch }: QuestionProps) => {
-  const settings = useDictSettings()
   const [w, setW] = useState<Dict>()
-  const gen = settings.gen.get()
-  useEffect(() => { 
-    const g = settings.gen.get()
-    setW(gen()) }, [gen])
+  const gen = useSelector(s => s.dict.gen)
+  useEffect(() => { setW(gen()) }, [gen])
 
   if (!w) return null
 
