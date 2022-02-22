@@ -1,18 +1,19 @@
 import {motion} from 'framer-motion'
 import Modal from 'components/Modal'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import styles from './DictSettings.module.css'
 import {useSelector, useDispatch} from 'states/useStore'
-import {changeDay} from 'states/dict'
+import {setDay} from 'states/dict'
 
 const DictSettings = ({}) => {
   const [on, setOn] = useState(false)
   const onModal = () => { setOn(!on) }
   
   const day = useSelector(s => s.dict.day)
-  const onDay = (d: string) => () => {
-    dispatch(changeDay(d))
-  }
+  useEffect(() => { dispatch(setDay(day)) }, [])
+
+  const onDay = (d: string) => 
+    () => { dispatch(setDay(d)) }
 
   const dayStyles = (d: string) => day === d 
     ? styles.dayActive

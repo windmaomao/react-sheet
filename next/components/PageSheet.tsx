@@ -9,7 +9,7 @@ type PageSheetProps = {
 }
 
 export type QuestionProps = {
-  id: string,
+  id: string | number,
   level: string,
 } & CardProps
 

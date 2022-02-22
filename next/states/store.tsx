@@ -5,11 +5,11 @@ const store = configureStore({
   reducer: {
     dict: dict
   },
-  middleware: (getDefaultMiddleware) => {
-    return getDefaultMiddleware({
-      serializableCheck: false,
-    })
-  }
+  // middleware: (getDefaultMiddleware) => {
+  //   return getDefaultMiddleware({
+  //     serializableCheck: false,
+  //   })
+  // }
 })
 
 export type State = ReturnType<typeof store.getState>

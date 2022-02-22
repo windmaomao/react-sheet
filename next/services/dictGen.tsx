@@ -137,7 +137,16 @@ const FjList1: Dict[] = [
 }))
 
 const FjList2 = [
-  ['', '']
+  ['fervent', '情感强累的，热烈的'],
+  ['alleviate', '减缓'],
+  ['contagious', '传染的'],
+  ['pedantic', '卖弄知识的'],
+  ['unwieldy', '体积庞大的'],
+  ['vociferous', '吵吵嚷嚷的'],
+  ['profess', '宣称'],
+  ['obeisance', '尊敬'],
+  ['diffuse', '分散的，啰嗦的'],
+  ['fulminate', '抨击，辱骂'],
 ].map(([word, meaning]) => ({
   word, meaning
 }))
