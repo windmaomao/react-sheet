@@ -2,6 +2,7 @@ import nsWordGen, {NsWord} from 'services/nsWordGen'
 import {useState, useEffect} from 'react'
 import styles from 'components/NsWord.module.css'
 import {QuestionProps} from 'components/PageSheet'
+import {speak} from 'services/speech'
 
 const gen = nsWordGen()
 
@@ -11,12 +12,14 @@ const NsWord = ({ id, level, touch }: QuestionProps) => {
 
   if (!w) return null
 
+  const onClick = () => { speak(w.join('')) }
+
   return (
     <div>
-      <div className={styles.index}>{id+1}</div>
+      <div className={styles.index}>{id}</div>
       <div className={styles.word} onClick={touch} >
         {w.map((p, i) => (
-          <span key={`${p}`}>
+          <span key={`${p}`} onClick={onClick}>
             {p}
           </span>
         ))}
