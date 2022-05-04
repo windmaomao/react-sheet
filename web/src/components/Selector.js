@@ -15,6 +15,8 @@ const gens = [
   { label: '8+-', gen: g({ max: 80, operator: '+-', min: 8 }) },
   { label: '9+-', gen: g({ max: 120, operator: '+-', min: 14 }) },
   { label: '10+-', gen: g({ max: 180, operator: '+-', min: 16 }) },
+  { label: '11+-', gen: g({ max: 250, operator: '+-', min: 26 }) },
+  { label: '12+-', gen: g({ max: 800, operator: '+-', min: 26 }) },
 ]
 
 const Selector = ({ onSelect }) => {

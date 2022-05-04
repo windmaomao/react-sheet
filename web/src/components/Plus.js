@@ -57,7 +57,7 @@ const Plus = ({
         error={error}
       >
         <div>{first}</div>
-        <div>{operator} &nbsp;&nbsp;{second}</div>
+        <div>{operator} &nbsp;{second}</div>
         <div>
           <input
             ref={inputRef}
