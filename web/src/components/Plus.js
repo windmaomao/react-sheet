@@ -49,6 +49,10 @@ const Plus = ({
     }
   }
 
+  const onBlur = e => {
+    onAnswer(e.target.value)
+  }
+
   return (
     <div>
       <div className="index">{i + 1})</div>
@@ -61,8 +65,10 @@ const Plus = ({
         <div>
           <input
             ref={inputRef}
+            inputMode="numeric"
             onKeyDown={onKeyDown}
             onFocus={onFocus}
+            onBlur={onBlur}
           />
         </div>
       </PlusStyle>
